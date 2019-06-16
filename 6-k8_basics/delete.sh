@@ -1,0 +1,1 @@
+kubectl delete -f restaurant-app.yaml

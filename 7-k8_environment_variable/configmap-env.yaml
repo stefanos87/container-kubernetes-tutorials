@@ -1,0 +1,12 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: app-config
+  namespace: default
+data:
+  UPLOAD_DIR: /upload
+
+
+
+
+  docker run -it --name $DOCKER_CONTAINER_NAME -p 8083:8082 -e UPLOAD_DIR=/upload $DOCKER_IMAGE_NAME:$DOCKER_IMAGE_VERSION

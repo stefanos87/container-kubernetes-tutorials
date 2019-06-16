@@ -1,0 +1,29 @@
+<h2>These are the endpoints available:</h2>
+
+<ul class="endpoints">
+  <li (click)="onclick('/healthz')">
+    <span class="badge">/healthz</span> ==> just testing Restaurant Application is up
+  </li>
+  <li>
+    <nav>
+      <a class="badge" routerLink="/restaurants">/restaurants</a> ==> getting restaurants list from Restaurant Application
+    </nav>
+  </li>
+  <li (click)="onclick('/dir')">
+    <span class="badge">/dir</span> ==> show configured upload directory
+  </li>
+  <li>
+    <span class="badge">/upload</span> ==> Upload file to upload directory
+        <input id="cin" name="cin" type="file" (change)="fileChangeEvent($event)"
+                placeholder="Upload a file..." required multiple/>
+        <button type="button" class="btn btn-success btn-s" (click)="upload()">
+          <i class="glyphicon glyphicon-open-file"></i>Upload
+        </button>
+  </li>
+  <li (click)="onclick('/list')">
+    <span class="badge">/list</span> ==> list all files in upload directory
+  </li>
+  <li (click)="onclick('/delete')">
+    <span class="badge">/delete</span> ==> delete all files from upload directory
+  </li>
+</ul>

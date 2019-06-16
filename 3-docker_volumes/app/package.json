@@ -1,0 +1,17 @@
+{
+  "name": "restaurants",
+  "private": false,
+  "version": "1.2.0",
+  "description": "Basic application for restaurant management",
+  "loggerLevel": "debug",
+  "scripts": {
+    "start": "node app"
+  },
+  "dependencies": {
+    "express": "4.16.4",
+    "multer":"1.4.1",
+    "connect-timeout":"1.9.0",
+    "fs-extra":"7.0.1",
+    "log4js":"3.0.6"
+  }
+}

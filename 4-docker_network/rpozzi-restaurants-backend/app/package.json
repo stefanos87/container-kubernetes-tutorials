@@ -1,0 +1,16 @@
+{
+  "name": "restaurants-backend",
+  "private": false,
+  "version": "1.0.0",
+  "description": "Backend services for restaurant management application",
+  "loggerLevel": "debug",
+  "scripts": {
+    "start": "node app"
+  },
+  "dependencies": {
+    "express": "4.16.4",
+    "connect-timeout":"1.9.0",
+    "log4js":"3.0.6",
+    "cors":"2.8.5"
+  }
+}
