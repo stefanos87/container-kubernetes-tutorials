@@ -15,6 +15,10 @@ var storage = multer.diskStorage({
 const upload = multer({ storage: storage })
 
 module.exports = function(app, logger) {
+    app.get('/healthz', function(req, res) {
+        logger.info("/healthz endpoint called");
+        res.json({ response : 'UploadManager microservice is healthy !!!'});
+    });
     app.get('/dir', function (req, res) {
         var msg = "Upload directory is: " + uploadDir;
         logger.info("/dir endpoint called");

@@ -1,5 +1,10 @@
+const log4js = require('log4js');
+const appName = require('../package').name;
+const logger = log4js.getLogger(appName);
+logger.level = require('../package').loggerLevel;
+
 function getRestaurants(callback) {
-	console.log("RestaurantService.getRestaurants called");
+	logger.info("RestaurantService.getRestaurants called");
 	var restaurants = __getFakeRestaurants();
 	callback({ restaurants : restaurants});
 }

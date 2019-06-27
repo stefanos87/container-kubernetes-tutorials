@@ -14,6 +14,7 @@ coffee3="${coffee} ${coffee} ${coffee}"
 DOCKER_IMAGE_NAME=robipozzi/rpozzi-upload-manager
 DOCKER_IMAGE_VERSION=1.0
 DOCKER_CONTAINER_NAME=upload-manager-app
+DOCKER_CONTAINER_PORT=8084
 UPLOAD_DIR=/Users/robertopozzi/temp/upload
 UPLOAD_DIR_MOUNT=/tmp/upload
 ###### Variable section - END

@@ -19,8 +19,8 @@ require("./routers/restaurant")(app, logger);
 require("./routers/fileManager")(app, logger);
 // Run server
 app.listen(PORT, function() {
-	logger.info("Application is listening on port " + PORT);
 	logger.info("Current working directory = " + process.cwd());
+	logger.info("Application is listening on port " + (process.env.EXPOSED_PORT || PORT));
 });
 // ############ Common Functions
 // Halt timeout
