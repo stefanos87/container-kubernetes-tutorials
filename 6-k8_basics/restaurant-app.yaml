@@ -9,15 +9,21 @@ spec:
     matchLabels:
       app: restaurant
       scope: demo
+      level: basic
   template:
     metadata:
       labels:
         app: restaurant
         scope: demo
+        level: basic
     spec:
       containers:
-        - name: restaurant-demo-app
-          image: "robipozzi/rpozzi-restaurants:1.0"
+      - name: restaurant-demo-app
+        image: "robipozzi/rpozzi-restaurants:1.0"
+        resources: 
+          limits: 
+            memory: "500Mi"
+            cpu: "250m"
 ---
 kind: Service
 apiVersion: v1
@@ -28,11 +34,12 @@ spec:
   selector:
     app: restaurant
     scope: demo
+    level: basic
   type: NodePort
   ports:
-    - protocol: "TCP"
-      port: 8082
-      nodePort: 31112
+  - protocol: "TCP"
+    port: 8082
+    nodePort: 31112
 ---
 kind: Ingress
 apiVersion: extensions/v1beta1

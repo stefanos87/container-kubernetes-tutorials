@@ -1,0 +1,7 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: restaurant-config
+  namespace: default
+data:
+  UPLOAD_DIR: /upload
