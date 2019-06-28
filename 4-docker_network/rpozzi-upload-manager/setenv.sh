@@ -9,7 +9,6 @@ end=$'\e[0m'
 coffee=$'\xE2\x98\x95'
 coffee3="${coffee} ${coffee} ${coffee}"
 ##### Terminal Colors - END
-
 ###### Variable section - START
 DOCKER_IMAGE_NAME=robipozzi/rpozzi-upload-manager
 DOCKER_IMAGE_VERSION=1.0

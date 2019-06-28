@@ -1,7 +1,7 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: restaurant
+  name: restaurant-env
   namespace: default
 spec:
   replicas: 1
@@ -9,17 +9,23 @@ spec:
     matchLabels:
       app: restaurant
       scope: demo
-      level: configuration
+      level: environment
   template:
     metadata:
       labels:
         app: restaurant
         scope: demo
-        level: configuration
+        level: environment
     spec:
       containers:
       - name: restaurant-demo-app
         image: "robipozzi/rpozzi-restaurants:1.1"
+        env: 
+        - name: UPLOAD_DIR 
+          valueFrom:  
+            configMapKeyRef: 
+              name: restaurant-config
+              key: upload_directory
         resources: 
           limits: 
             memory: "500Mi"
@@ -28,23 +34,24 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: restaurant-service
+  name: restaurant-env-service
   namespace: default
 spec:
   selector:
     app: restaurant
     scope: demo
-    level: configuration
+    level: environment
   type: NodePort
   ports:
   - protocol: "TCP"
-    port: 8082
-    nodePort: 31113
+    port: 9991
+    targetPort: 8082
+    nodePort: 31115
 ---
 kind: Ingress
 apiVersion: extensions/v1beta1
 metadata:
-  name: restaurant-ingress
+  name: restaurant-env-ingress
   namespace: default
   annotations:
     ingress.kubernetes.io/rewrite-target: /
@@ -54,5 +61,5 @@ spec:
       paths:
       - path: /restaurant
         backend:
-          serviceName: restaurant-service
-          servicePort: 8082
+          serviceName: restaurant-env-service
+          servicePort: 9991

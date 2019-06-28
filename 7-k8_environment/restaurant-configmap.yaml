@@ -4,4 +4,4 @@ metadata:
   name: restaurant-config
   namespace: default
 data:
-  UPLOAD_DIR: /upload
+  upload_directory: /tmp/upload
