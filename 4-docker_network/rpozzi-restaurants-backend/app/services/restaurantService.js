@@ -2,6 +2,7 @@ const log4js = require('log4js');
 const appName = require('../package').name;
 const logger = log4js.getLogger(appName);
 logger.level = require('../package').loggerLevel;
+var propertiesReader = require('properties-reader');
 
 function getRestaurants(callback) {
 	logger.info("RestaurantService.getRestaurants called");

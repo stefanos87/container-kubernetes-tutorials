@@ -19,6 +19,7 @@ require("./routers/uploadManager")(app, logger);
 // Run server
 app.listen(PORT, function() {
 	logger.info("Current working directory = " + process.cwd());
+	logger.info("Upload directory from UPLOAD_DIR environment variable = " + process.env.UPLOAD_DIR);
 	logger.info("Application is listening on port " + (process.env.EXPOSED_PORT || PORT));
 });
 // ############ Common Functions
