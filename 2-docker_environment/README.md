@@ -12,7 +12,7 @@ The application requires 2 environment variables, as it can be seen in the follo
 
 ![](https://github.com/robipozzi/docker-kubernetes-tutorials/blob/master/2-docker_environment/images/code-snippet1.png)
 
-* one is called *UPLOAD_DIR*, and must be passed to the applicationm by launching it with the following construct:
+* one is called *UPLOAD_DIR*, and must be passed to the application by launching it with the following construct:
 
 **UPLOAD_DIR="/Users/robertopozzi/temp/upload" npm start**
 
