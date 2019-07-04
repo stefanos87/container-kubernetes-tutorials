@@ -8,15 +8,15 @@ It builds on the previous tutorial by extending NodeJs based web application to 
 
 Application code is provided in */app* subfolder and can be run by launching *app-run.sh* script, available in the repository root folder. 
 
-As it can be seen in *app.js* file, the application requires 2 environment variables, one is called *UPLOAD_DIR*, 
+The application requires 2 environment variables, as it can be seen in *app.js* file, 
 
 ![](https://github.com/robipozzi/docker-kubernetes-tutorials/blob/master/2-docker_environment/images/code-snippet1.png)
 
-and must be passed to the application when it is launched with the following construct:
+* one is called *UPLOAD_DIR*, and must be passed to the applicationm by launching it with the following construct:
 
 **UPLOAD_DIR="/Users/robertopozzi/temp/upload" npm start**
 
-the other is called *EXPOSED_PORT* but it is not mandatory.
+* the other is called *EXPOSED_PORT* but it is not mandatory.
 
 A *Dockerfile* is also provided to build and run the application as a Docker container. Once the Docker image is built, it can be run with the standard Docker run command: 
 
