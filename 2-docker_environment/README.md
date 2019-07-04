@@ -1,7 +1,7 @@
 # Docker environment variables usage tutorial
 This tutorial provides code to test and understand how environment variables can be used to externalize and inject configuration in Docker based applications.
 
-It builds on the previous tutorial by extending NodeJs based web application to serve an HTML page and expose 3 endpoints:
+It builds on ![Docker Basic Tutorial](https://github.com/robipozzi/docker-kubernetes-tutorials/tree/master/1-docker_basics) by extending NodeJs based web application to serve an HTML page and expose 3 endpoints:
 * */healthz* endpoint - it calls a REST service endpoint that returns a string, testing that the application is up and healthy
 * */restaurants* endpoint - it calls a REST service endpoint that returns a list of restaurants in Json format
 * */dir* endpoint - it calls an endpoint that show the upload directory, as defined by UPLOAD_DIR environment variable which has been injected in the application environment
