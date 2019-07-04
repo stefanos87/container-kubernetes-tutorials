@@ -16,11 +16,11 @@ the other is called *EXPOSED_PORT*
 
 A *Dockerfile* is also provided to build and run the application as a Docker container. Once the Docker image is built, it can be run with the standard Docker run command: 
 
-*docker run -it --name restaurant-app -p 8083:8082 -e UPLOAD_DIR=$UPLOAD_DIR -e EXPOSED_PORT=8083 robipozzi/rpozzi-restaurants:1.1*
+**docker run -it --name restaurant-app -p 8083:8082 -e UPLOAD_DIR=$UPLOAD_DIR -e EXPOSED_PORT=8083 robipozzi/rpozzi-restaurants:1.1**
 
 As it can be seen, an environment variable can be injected into a container with the following Docker construct:
 
-*-e <ENV_VARIABLE_KEY>=<ENV_VARIABLE_VALUE>*
+**-e <ENV_VARIABLE_KEY>=<ENV_VARIABLE_VALUE>**
 
 The following scripts are provided for convenience:
 * *docker-build.sh* - it can be launched to build the Docker image; the script removes the Docker image and re-builds it. All the relevant parameters are externalized and can be changed in *setenv.sh* script.
