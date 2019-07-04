@@ -8,7 +8,7 @@ It builds on the previous tutorial by extending NodeJs based web application to 
 
 Application code is provided in */app* subfolder and can be run by launching *app-run.sh* script, available in the repository root folder. 
 
-The application requires 2 environment variables, as it can be seen in *app.js* file, 
+The application requires 2 environment variables, as it can be seen in the following code snippet from *app.js* file
 
 ![](https://github.com/robipozzi/docker-kubernetes-tutorials/blob/master/2-docker_environment/images/code-snippet1.png)
 
