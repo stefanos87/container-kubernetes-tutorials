@@ -7,7 +7,7 @@ var propertiesReader = require('properties-reader');
 function getRestaurants(callback) {
 	logger.info("RestaurantService.getRestaurants called");
 	// Read properties from a file
-	// Refer to: https://www.npmjs.com/package/properties-reader
+	// Refer to url: https://www.npmjs.com/package/properties-reader
 	__getFakeRestaurants(callback);
 }
 
