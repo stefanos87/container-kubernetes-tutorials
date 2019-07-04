@@ -1,4 +1,4 @@
-# Docker environment variables usage tutorial
+# Docker Environment Variables Tutorial
 This tutorial provides code to test and understand how environment variables can be used to externalize and inject configuration in Docker based applications.
 
 It builds on ![Docker Basics Tutorial](https://github.com/robipozzi/docker-kubernetes-tutorials/tree/master/1-docker_basics) by extending NodeJs based web application to serve an HTML page and expose 3 endpoints:
@@ -6,7 +6,7 @@ It builds on ![Docker Basics Tutorial](https://github.com/robipozzi/docker-kuber
 * */restaurants* endpoint - it calls a REST service endpoint that returns a list of restaurants in Json format
 * */dir* endpoint - it calls an endpoint that show the upload directory, as defined by UPLOAD_DIR environment variable which has been injected in the application environment
 
-Application code is provided in */app* subfolder and can be run by launching *app-run.sh* script, available in the repository root folder. 
+Application code is provided in */app* subfolder and can be run by launching *app-run.sh* script, available in the repository root folder.
 
 The application requires 2 environment variables, as it can be seen in the following code snippet from *app.js* file
 
@@ -27,6 +27,8 @@ As it can be seen, an environment variable can be injected into a container with
 **-e <ENV_VARIABLE_KEY>=<ENV_VARIABLE_VALUE>**
 
 The following scripts are provided for convenience:
-* *docker-build.sh* - it can be launched to build the Docker image; the script removes the Docker image and re-builds it. All the relevant parameters are externalized and can be changed in *setenv.sh* script.
-* *docker-run.sh* endpoint - it can be launched to run Docker container locally; the script removes running container and runs a fresh container instance. All the relevant parameters are externalized and can be changed in *setenv.sh* script.
+* *docker-build.sh* - it can be launched to build the Docker image; the script removes the Docker image and re-builds it.
+* *docker-run.sh* endpoint - it can be launched to run Docker container locally; the script removes running container and runs a fresh container instance.
 * *docker-push.sh* - it can be launched to push the Docker image to Docker Hub. You will need to modify *$DOCKER_IMAGE* parameter in *setenv.sh* appropriately to push to the correct Docker Hub repository.
+
+All the relevant parameters are externalized and can be changed in *setenv.sh* script.
