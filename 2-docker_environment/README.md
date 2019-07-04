@@ -10,7 +10,7 @@ Application code is provided in */app* subfolder and can be run by launching *ap
 
 As it can be seen in *app.js* file, the application requires 2 environment variables, one is called *UPLOAD_DIR*, and must be passed to the application when it is launched with the following construct:
 
-*UPLOAD_DIR="/Users/robertopozzi/temp/upload" npm start*
+**UPLOAD_DIR="/Users/robertopozzi/temp/upload" npm start**
 
 the other is called *EXPOSED_PORT*
 
