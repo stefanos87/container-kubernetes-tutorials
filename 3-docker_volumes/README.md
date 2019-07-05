@@ -1,14 +1,15 @@
 # Docker Volumes Tutorial
 This tutorial provides code to test and understand how persistence can be managed in Docker based applications, which by nature are inherently non persistent. 
-Talk a little bit about Docker volumes.
+
+[TODO] Talk a little bit about Docker volumes.
 
 It builds on ![Docker Environment Variables Tutorial](https://github.com/robipozzi/docker-kubernetes-tutorials/tree/master/2-docker_environment) by further extending NodeJs based web application to serve an HTML page and expose 6 endpoints:
 * */healthz* endpoint - it calls a REST service endpoint that returns a string, testing that the application is up and healthy
 * */restaurants* endpoint - it calls a REST service endpoint that returns a list of restaurants in Json format
-* */dir* endpoint - it calls an endpoint that show the upload directory, as defined by UPLOAD_DIR environment variable which has been injected in the application environment
-* */upload* endpoint - [TODO]
-* */list* endpoint - [TODO]
-* */delete* endpoint - [TODO]
+* */dir* endpoint - it calls an endpoint that shows the upload directory, as defined by UPLOAD_DIR environment variable which has been injected in the application environment
+* */upload* endpoint - it allows to select files from the local filesystem and upload them to *<UPLOAD_DIR>* folder
+* */list* endpoint - it calls an endpoint that shows all the files in *<UPLOAD_DIR>* folder
+* */delete* endpoint - it calls an endpoint that deletes all the files in *<UPLOAD_DIR>* folder
 
 Application code is provided in */app* subfolder and can be run by launching *app-run.sh* script, available in the repository root folder.
 

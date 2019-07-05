@@ -4,7 +4,7 @@ This tutorial provides code to test and understand how environment variables can
 It builds on ![Docker Basics Tutorial](https://github.com/robipozzi/docker-kubernetes-tutorials/tree/master/1-docker_basics) by extending NodeJs based web application to serve an HTML page and expose 3 endpoints:
 * */healthz* endpoint - it calls a REST service endpoint that returns a string, testing that the application is up and healthy
 * */restaurants* endpoint - it calls a REST service endpoint that returns a list of restaurants in Json format
-* */dir* endpoint - it calls an endpoint that show the upload directory, as defined by UPLOAD_DIR environment variable which has been injected in the application environment
+* */dir* endpoint - it calls an endpoint that shows the upload directory, as defined by UPLOAD_DIR environment variable which has been injected in the application environment
 
 Application code is provided in */app* subfolder and can be run by launching *app-run.sh* script, available in the repository root folder.
 
