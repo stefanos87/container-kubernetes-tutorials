@@ -14,11 +14,20 @@ The tutorial builds on previous ![Docker Environment Variables Tutorial](https:/
 ## Application demo scenario
 Application code is provided in */app* subfolder and can be run by launching *app-run.sh* script, available in the repository root folder.
 
+A *Dockerfile* is also provided to build and run the application as a Docker container. 
+
+Once the Docker image is built, run a Docker container with the following standard Docker run command, where */tmp/upload* is a folder inside the Docker container filesystem: 
+
+**docker run -it --name robipozzi/rpozzi-restaurants -p 8083:8082 -e UPLOAD_DIR=/tmp/upload -e EXPOSED_PORT=8083 robipozzi/rpozzi-restaurants:1.2**
+
+Explore application behavior by opening a web browser with URL *http://localhost:8083* and doing the following steps:
+1. upload some files 
+
 ## Automation scripts available
 The following scripts are provided for convenience:
 * *docker-build.sh* - it can be launched to build the Docker image; the script removes the Docker image and re-builds it.
-* *docker-run-no-volume.sh* endpoint - it can be launched to run Docker container locally with no Docker volumes attached [TODO].
-* *docker-run-with-volume.sh* endpoint - it can be launched to run Docker container locally with Docker volumes attached [TODO]. 
+* *docker-run-no-volume.sh* endpoint - it can be launched to run Docker container locally with no Docker volumes attached.
+* *docker-run-with-volume.sh* endpoint - it can be launched to run Docker container locally with Docker volumes attached. 
 * *docker-push.sh* - it can be launched to push the Docker image to Docker Hub. You will need to modify *$DOCKER_IMAGE* parameter in *setenv.sh* appropriately to push to the correct Docker Hub repository.
 
 All the relevant parameters are externalized and can be changed in *setenv.sh* script.
