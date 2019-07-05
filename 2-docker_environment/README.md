@@ -6,6 +6,7 @@ It builds on ![Docker Basics Tutorial](https://github.com/robipozzi/docker-kuber
 * */restaurants* endpoint - it calls a REST service endpoint that returns a list of restaurants in Json format
 * */dir* endpoint - it calls an endpoint that shows the upload directory, as defined by UPLOAD_DIR environment variable which has been injected in the application environment
 
+## Application demo scenario
 Application code is provided in */app* subfolder and can be run by launching *app-run.sh* script, available in the repository root folder.
 
 The application requires 2 environment variables, as it can be seen in the following code snippet from *app.js* file
@@ -20,12 +21,17 @@ The application requires 2 environment variables, as it can be seen in the follo
 
 A *Dockerfile* is also provided to build and run the application as a Docker container. Once the Docker image is built, it can be run with the standard Docker run command: 
 
-**docker run -it --name restaurant-app -p 8083:8082 -e UPLOAD_DIR=$UPLOAD_DIR -e EXPOSED_PORT=8083 robipozzi/rpozzi-restaurants:1.1**
+**docker run -it --name restaurant-app -p 8083:8082 -e UPLOAD_DIR=<YOUR_UPLOAD_DIR> -e EXPOSED_PORT=8083 robipozzi/rpozzi-restaurants:1.1**
 
 As it can be seen, an environment variable can be injected into a container with the following Docker construct:
 
 **-e <ENV_VARIABLE_KEY>=<ENV_VARIABLE_VALUE>**
 
+Once the Docker container is started, launch *http://localhost:8083/dir* endpoint which will show the upload directory used by application
+
+![](https://github.com/robipozzi/docker-kubernetes-tutorials/blob/master/2-docker_environment/images/dir_endpoint.png)
+
+## Automation scripts available
 The following scripts are provided for convenience:
 * *docker-build.sh* - it can be launched to build the Docker image; the script removes the Docker image and re-builds it.
 * *docker-run.sh* endpoint - it can be launched to run Docker container locally; the script removes running container and runs a fresh container instance.
