@@ -27,9 +27,11 @@ As it can be seen, an environment variable can be injected into a container with
 
 **-e <ENV_VARIABLE_KEY>=<ENV_VARIABLE_VALUE>**
 
-Once the Docker container is started, launch *http://localhost:8083/dir* endpoint which will show the upload directory used by application
+Once the Docker container is started, launch *http://localhost:8083/dir* endpoint which will return the upload directory used by application, as shown in the following snapshot:
 
 ![](https://github.com/robipozzi/docker-kubernetes-tutorials/blob/master/2-docker_environment/images/dir_endpoint.png)
+
+You can restart Docker container by changing *<YOUR_UPLOAD_DIR>* in *-e UPLOAD_DIR=<YOUR_UPLOAD_DIR>* and see how environment variable change affects the application.
 
 ## Automation scripts available
 The following scripts are provided for convenience:
