@@ -25,17 +25,23 @@ Once the Docker image is built, run a Docker container with the following standa
 
 Explore application behavior by opening a web browser with URL *http://localhost:8083* and doing the following steps:
 1. upload some files from your local filesystem to *<UPLOAD_DIR>* folder by using the *Browse* and then *Upload your files* buttons
-2. call *http://localhost:8083/list* endpoint that will show the content of *<UPLOAD_DIR>* folder: you should see the files you uploaded in the step before
+2. call *http://localhost:8083/list* endpoint that will show the content of *<UPLOAD_DIR>* folder: you will see the files you uploaded in the step before
 3. stop the container by issuing CTRL+C in the terminal windows
 4. run the container again, with the same docker run command as before (or run *docker-run-no-volume.sh* script)
 5. call *http://localhost:8083/list* endpoint: since the container has been launched without any volume, the container filesystem is ephemeral and you will not see any file listed
 6. stop the container by issuing CTRL+C in the terminal windows
 
-To test how Docker can manage persistence through the usage of volumes, run a Docker container with the following standard Docker run command, where */tmp/upload* is a folder inside the Docker container filesystem (*docker-run-with-volume.sh* script is provided to automate this task avoiding errors): 
+To test how Docker can manage persistence through the usage of volumes, run a Docker container with the following standard Docker run command (change */Users/robertopozzi/temp/upload* to a folder available on your workstation), where */tmp/upload* is a folder inside the Docker container filesystem (*docker-run-with-volume.sh* script is provided to automate this task avoiding errors): 
 
 **docker run -it --name restaurant-app -p 8083:8082 -v /Users/robertopozzi/temp/upload:/tmp/upload -e UPLOAD_DIR=/tmp/upload -e EXPOSED_PORT=8083 robipozzi/rpozzi-restaurants:1.2**
 
-#Change */Users/robertopozzi/temp/upload* to a folder available on your workstation#
+Now run again the following steps:
+1. upload some files from your local filesystem to *<UPLOAD_DIR>* folder by using the *Browse* and then *Upload your files* buttons
+2. call *http://localhost:8083/list* endpoint that will show the content of *<UPLOAD_DIR>* folder: you will see the files you uploaded in the step before
+3. stop the container by issuing CTRL+C in the terminal windows
+4. run the container again, with the same docker run command as before (or run *docker-run-with-volume.sh* script)
+5. call *http://localhost:8083/list* endpoint: since the container now uses a volume and mounts a local folder to the container filesystem you will now see the files previously uploaded
+6. stop the container by issuing CTRL+C in the terminal windows
 
 ## Automation scripts available
 The following scripts are provided for convenience:
