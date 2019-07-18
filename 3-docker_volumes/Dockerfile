@@ -1,4 +1,4 @@
-FROM node:8.11.3
+FROM node:12.6.0
 LABEL author="Roberto Pozzi"
 WORKDIR "/app"
 # Create upload directory

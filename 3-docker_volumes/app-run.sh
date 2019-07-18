@@ -1,2 +1,3 @@
+source setenv.sh
 cd app
-UPLOAD_DIR="/Users/robertopozzi/temp/upload" npm start
+UPLOAD_DIR=$UPLOAD_DIR npm start

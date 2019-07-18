@@ -21,11 +21,15 @@ Once the Docker image is built, run a Docker container with the following standa
 **docker run -it --name robipozzi/rpozzi-restaurants -p 8083:8082 -e UPLOAD_DIR=/tmp/upload -e EXPOSED_PORT=8083 robipozzi/rpozzi-restaurants:1.2**
 
 Explore application behavior by opening a web browser with URL *http://localhost:8083* and doing the following steps:
-1. upload some files 
+1. upload some files [TODO]
+2. call *http://localhost:8083/list* endpoint [TODO]
+3. stop the container
+4. run the container again, with the same docker run command as before
+5. call *http://localhost:8083/list* endpoint [TODO]
 
 ## Automation scripts available
 The following scripts are provided for convenience:
-* *docker-build.sh* - it can be launched to build the Docker image; the script removes the Docker image and re-builds it.
+* *docker-build.sh* - it can be launched to build the Docker image; the script removes the Docker image from the local registry and re-builds it.
 * *docker-run-no-volume.sh* endpoint - it can be launched to run Docker container locally with no Docker volumes attached.
 * *docker-run-with-volume.sh* endpoint - it can be launched to run Docker container locally with Docker volumes attached. 
 * *docker-push.sh* - it can be launched to push the Docker image to Docker Hub. You will need to modify *$DOCKER_IMAGE* parameter in *setenv.sh* appropriately to push to the correct Docker Hub repository.
