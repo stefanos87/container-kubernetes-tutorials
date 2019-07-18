@@ -16,4 +16,6 @@ DOCKER_CONTAINER_NAME=restaurant-app
 DOCKER_CONTAINER_PORT=8083
 UPLOAD_DIR=/Users/robertopozzi/temp/upload
 UPLOAD_DIR_MOUNT=/tmp/upload
+CONFIG_DIR=/Users/robertopozzi/dev/robipozzi-kubernetes/docker-kubernetes-tutorials/3-docker_volumes/app/config
+CONFIG_DIR_MOUNT=/config
 ###### Variable section - END

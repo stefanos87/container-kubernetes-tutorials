@@ -3,6 +3,8 @@ LABEL author="Roberto Pozzi"
 WORKDIR "/app"
 # Create upload directory
 RUN mkdir /tmp/upload
+# Create directory for configuration files
+RUN mkdir /config
 # Copy application source files
 COPY app/ /app/
 # Install app dependencies
