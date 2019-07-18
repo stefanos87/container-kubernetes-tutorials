@@ -6,7 +6,8 @@ It builds on ![Docker Basics Tutorial](https://github.com/robipozzi/docker-kuber
 * */restaurants* endpoint - it calls a REST service endpoint that returns a list of restaurants in Json format
 * */dir* endpoint - it calls an endpoint that shows the upload directory, as defined by UPLOAD_DIR environment variable which has been injected in the application environment
 
-![Docker Basics Tutorial](https://github.com/robipozzi/docker-kubernetes-tutorials/tree/master/1-docker_basics#Prerequisites)
+## Prerequisites
+Prerequisites are described in ![Docker Basics Tutorial - Prerequisites](https://github.com/robipozzi/docker-kubernetes-tutorials/tree/master/1-docker_basics#Prerequisites) paragraph.
 
 ## Application demo scenario
 Application code is provided in */app* subfolder.

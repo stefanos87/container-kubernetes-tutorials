@@ -11,6 +11,9 @@ The tutorial builds on previous ![Docker Environment Variables Tutorial](https:/
 * */list* endpoint - it calls an endpoint that shows all the files in *<UPLOAD_DIR>* folder
 * */delete* endpoint - it calls an endpoint that deletes all the files in *<UPLOAD_DIR>* folder
 
+## Prerequisites
+Prerequisites are described in ![Docker Basics Tutorial - Prerequisites](https://github.com/robipozzi/docker-kubernetes-tutorials/tree/master/1-docker_basics#Prerequisites) paragraph.
+
 ## Application demo scenario
 Application code is provided in */app* subfolder and can be run by launching *app-run.sh* script, available in the repository root folder.
 
