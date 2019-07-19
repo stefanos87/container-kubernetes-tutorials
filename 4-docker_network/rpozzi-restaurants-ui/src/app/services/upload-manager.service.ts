@@ -3,12 +3,13 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { ErrorService } from '../error/services/error.service';
 import { Observable } from 'rxjs';
 import { tap, catchError } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UploadManagerService {
-  private uploadManagerServiceUrl = 'http://localhost:8083';
+  private uploadManagerServiceUrl = environment.uploadMgrApiEndpoint;
   private uploadDirApi: String = '/dir';
   private uploadApi: String = '/upload';
   private fileListApi: String = '/list';

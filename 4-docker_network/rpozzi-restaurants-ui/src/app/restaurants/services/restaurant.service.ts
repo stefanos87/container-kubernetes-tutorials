@@ -3,12 +3,13 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { ErrorService } from '../../error/services/error.service';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RestaurantService {
-  private restaurantServiceUrl = 'http://localhost:8082';
+  private restaurantServiceUrl = environment.restaurantsApiEndpoint;
   private healthzApi: String = '/healthz';
   private restaurantsApi: String = '/restaurants';
   private httpOptions = {
