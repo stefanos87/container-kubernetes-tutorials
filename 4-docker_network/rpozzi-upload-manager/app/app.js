@@ -2,10 +2,7 @@
 var express = require('express');
 var timeout = require('connect-timeout');
 const cors = require('cors');
-const log4js = require('log4js');
-const appName = require('./package').name;
-const logger = log4js.getLogger(appName);
-logger.level = require('./package').loggerLevel;
+var logger = require('./utils/logger');
 // Initialize application
 var app = express();
 app.use(cors());
