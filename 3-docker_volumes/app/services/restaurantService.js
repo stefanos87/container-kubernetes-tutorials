@@ -29,6 +29,6 @@ function __getFakeRestaurants() {
 	var restaurant5 = { id : 5, name : "Arancioamaro", city : "Cannero", rating: 3}
 	var restaurants = [restaurant1, restaurant2, restaurant3, restaurant4, restaurant5];
 	return restaurants;
-}	
+}
 
 exports.getRestaurants = getRestaurants;
