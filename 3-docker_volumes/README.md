@@ -46,8 +46,8 @@ Now run again the following steps:
 ## Automation scripts available
 The following scripts are provided for convenience:
 * *docker-build.sh* - it can be launched to build the Docker image; the script removes the Docker image from the local registry and re-builds it.
-* *docker-run-no-volume.sh* endpoint - it can be launched to run Docker container locally with no Docker volumes attached.
-* *docker-run-with-volume.sh* endpoint - it can be launched to run Docker container locally with Docker volumes attached. 
+* *docker-run-no-volume.sh* - it can be launched to run Docker container locally with no Docker volumes attached.
+* *docker-run-with-volume.sh* - it can be launched to run Docker container locally with Docker volumes attached. 
 * *docker-push.sh* - it can be launched to push the Docker image to Docker Hub. You will need to modify *$DOCKER_IMAGE* parameter in *setenv.sh* appropriately to push to the correct Docker Hub repository.
 
 All the relevant parameters are externalized and can be changed in *setenv.sh* script.
