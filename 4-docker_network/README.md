@@ -1,8 +1,11 @@
 # Docker networking tutorial
-
+[TODO]
 
 ## Prerequisites
 Prerequisites are described in ![Docker Basics Tutorial - Prerequisites](https://github.com/robipozzi/docker-kubernetes-tutorials/tree/master/1-docker_basics#Prerequisites) paragraph.
+
+## Application demo scenario
+[TODO]
 
 ## Automation scripts available
 The following scripts are provided for convenience:
