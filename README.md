@@ -7,4 +7,4 @@ Following the list of tutorials:
 1. ![Docker Basics Tutorial](https://github.com/robipozzi/docker-kubernetes-tutorials/tree/master/1-docker_basics)
 2. ![Docker Tutorial for Environment Variables](https://github.com/robipozzi/docker-kubernetes-tutorials/tree/master/2-docker_environment)
 3. ![Docker Tutorial for Volumes](https://github.com/robipozzi/docker-kubernetes-tutorials/tree/master/3-docker_volumes)
-3. ![Docker Tutorial for Networking](https://github.com/robipozzi/docker-kubernetes-tutorials/tree/master/4-docker_network)
+4. ![Docker Tutorial for Networking](https://github.com/robipozzi/docker-kubernetes-tutorials/tree/master/4-docker_network)
