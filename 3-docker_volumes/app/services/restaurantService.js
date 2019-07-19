@@ -1,11 +1,23 @@
-const log4js = require('log4js');
-const appName = require('../package').name;
-const logger = log4js.getLogger(appName);
-logger.level = require('../package').loggerLevel;
-
+// Add required modules
+var propertyReader = require('../utils/propertyReader');
+var logger = require('../utils/logger');
+// Functions
 function getRestaurants(callback) {
 	logger.info("RestaurantService.getRestaurants called");
-	var restaurants = __getFakeRestaurants();
+	var restaurants;
+	try {
+		var useDb = propertyReader.getProperty('use.db');
+		if (useDb) {
+			logger.info("db.type = " + propertyReader.getProperty('db.type'));
+			logger.info("db.url = " + propertyReader.getProperty('db.url'));
+		} else {
+			logger.debug("Getting restaurants from stub service");
+			restaurants = __getFakeRestaurants();
+		}
+	} catch (error) {
+		logger.error("Not able to read 'use.db' property, getting restaurants from stub service");
+		restaurants = __getFakeRestaurants();
+	}
 	callback({ restaurants : restaurants});
 }
 

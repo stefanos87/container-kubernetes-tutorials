@@ -1,11 +1,8 @@
 // Add required modules
 var express = require('express');
 var timeout = require('connect-timeout');
-var propertiesReader = require('properties-reader');
-const log4js = require('log4js');
-const appName = require('./package').name;
-const logger = log4js.getLogger(appName);
-logger.level = require('./package').loggerLevel;
+var propertyReader = require('./utils/propertyReader');
+var logger = require('./utils/logger');
 // Initialize application
 var app = express();
 app.use(express.static(process.cwd() + '/public'));
@@ -25,15 +22,10 @@ app.listen(PORT, function() {
 	logger.info("Upload directory from UPLOAD_DIR environment variable = " + process.env.UPLOAD_DIR);
 	logger.info("Configuration files directory from CONFIG_DIR environment variable = " + configDir);
 	try {
-		var properties = propertiesReader(configDir + '/config.properties');
-		var useDb = properties.get('use.db')
+		var useDb = propertyReader.getProperty('use.db');
 		logger.info("use.db = " + useDb);
-		if (useDb) {
-			logger.info("db.type = " + properties.get('db.type'));
-			logger.info("db.url = " + properties.get('db.url'));
-		}
 	} catch (error) {
-		logger.error("Not able to read from " + configDir + "/config.properties - check it exists");
+		logger.error("Not able to read 'use.db' property");
 	}
 	logger.info("Application is listening on port " + (process.env.EXPOSED_PORT || PORT));
 });
