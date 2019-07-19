@@ -11,3 +11,4 @@ Following is the list of tutorials:
 5. ![Kubernetes Basics Tutorial](https://github.com/robipozzi/docker-kubernetes-tutorials/tree/master/5-k8_basics)
 6. ![Kubernetes Tutorial for Environment Variables](https://github.com/robipozzi/docker-kubernetes-tutorials/tree/master/6-k8_environment)
 7. ![Kubernetes Tutorial for ConfigurationMaps and Secrets](https://github.com/robipozzi/docker-kubernetes-tutorials/tree/master/7-k8_configuration)
+8. [TODO] Kubernetes Tutorial for PersistentVolumes
