@@ -1,5 +1,4 @@
 source setenv.sh
-
 rm -rf $ANGULAR_DIST_DIR
 echo ${cyn}Building Angular app ...${end}
 ng build --prod
