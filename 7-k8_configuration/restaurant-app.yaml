@@ -2,20 +2,19 @@ kind: Deployment
 apiVersion: apps/v1
 metadata:
   name: restaurant-config
-  namespace: default
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: restaurant
       scope: demo
-      level: environment
+      level: configuration
   template:
     metadata:
       labels:
         app: restaurant
         scope: demo
-        level: environment
+        level: configuration
     spec:
       containers:
       - name: restaurant-demo-app
@@ -24,23 +23,34 @@ spec:
         - name: UPLOAD_DIR 
           valueFrom:  
             configMapKeyRef: 
-              name: restaurant-config
+              name: restaurant-configmap
               key: upload_directory
+        - name: CONFIG_DIR 
+          valueFrom:  
+            configMapKeyRef: 
+              name: restaurant-configmap
+              key: configuration_directory
+        volumeMounts:
+          - name:  config-vol
+            mountPath:  /config
         resources: 
           limits: 
             memory: "500Mi"
             cpu: "250m"
+      volumes:
+        - name:  config-vol
+          configMap:
+            name: restaurant-configmap
 ---
 kind: Service
 apiVersion: v1
 metadata:
   name: restaurant-config-service
-  namespace: default
 spec:
   selector:
     app: restaurant
     scope: demo
-    level: environment
+    level: configuration
   type: NodePort
   ports:
   - protocol: "TCP"
@@ -52,7 +62,6 @@ kind: Ingress
 apiVersion: extensions/v1beta1
 metadata:
   name: restaurant-config-ingress
-  namespace: default
   annotations:
     ingress.kubernetes.io/rewrite-target: /
 spec:

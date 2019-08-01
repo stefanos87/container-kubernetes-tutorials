@@ -2,7 +2,6 @@ kind: Deployment
 apiVersion: apps/v1
 metadata:
   name: restaurant-env
-  namespace: default
 spec:
   replicas: 1
   selector:
@@ -22,10 +21,7 @@ spec:
         image: "robipozzi/rpozzi-restaurants:1.1"
         env: 
         - name: UPLOAD_DIR 
-          valueFrom:  
-            configMapKeyRef: 
-              name: restaurant-config
-              key: upload_directory
+          value: /tmp/upload
         resources: 
           limits: 
             memory: "500Mi"
@@ -35,7 +31,6 @@ kind: Service
 apiVersion: v1
 metadata:
   name: restaurant-env-service
-  namespace: default
 spec:
   selector:
     app: restaurant
@@ -52,7 +47,6 @@ kind: Ingress
 apiVersion: extensions/v1beta1
 metadata:
   name: restaurant-env-ingress
-  namespace: default
   annotations:
     ingress.kubernetes.io/rewrite-target: /
 spec:
