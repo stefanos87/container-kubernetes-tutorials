@@ -1,4 +1,4 @@
-# Docker Environment Variables Tutorial
+# Docker Environment Variables tutorial
 This tutorial provides code to test and understand how environment variables can be used to externalize and inject configuration in Docker based applications.
 
 It builds on ![Docker Basics Tutorial](https://github.com/robipozzi/docker-kubernetes-tutorials/tree/master/1-docker_basics) by extending Node.Js based web application which serves an HTML page and exposes the following 3 endpoints:

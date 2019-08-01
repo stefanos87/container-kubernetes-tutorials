@@ -1,4 +1,4 @@
-# Docker Volumes Tutorial
+# Docker Volumes tutorial
 This tutorial provides code to test and understand how persistence can be managed in Docker based applications.
 
 Docker containers are, by nature, inherently volatile, which means they do not persist state between subsequent runs of the container. Since persistence is mandatory for any non trivial application, Docker obviously provides technical mechanisms to manage persistence through the usage of Docker volumes (see Docker official documentation https://docs.docker.com/storage/volumes/).

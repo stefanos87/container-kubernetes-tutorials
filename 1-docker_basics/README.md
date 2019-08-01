@@ -1,4 +1,4 @@
-# Docker Basics Tutorial
+# Docker basics tutorial
 This tutorial provides the entry point to start familiarize with basic Docker concepts and operations.
 
 A simple web application running on Node.Js is provided; it serves an HTML page and exposes the following 2 REST service endpoints:

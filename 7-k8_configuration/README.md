@@ -1,1 +1,1 @@
-# Kubernetes environment variables usage tutorial
+# Kubernetes ConfigMap and Secrets tutorial
