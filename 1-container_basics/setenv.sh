@@ -10,8 +10,8 @@ coffee=$'\xE2\x98\x95'
 coffee3="${coffee} ${coffee} ${coffee}"
 ##### Terminal Colors - END
 ###### Variable section - START
-DOCKER_IMAGE_NAME=robipozzi/rpozzi-restaurants
-DOCKER_IMAGE_VERSION=1.0
-DOCKER_CONTAINER_NAME=restaurant-app
-DOCKER_CONTAINER_PORT=8083
+CONTAINER_IMAGE_NAME=robipozzi/rpozzi-restaurants
+CONTAINER_IMAGE_VERSION=1.0
+CONTAINER_NAME=restaurant-app
+CONTAINER_PORT=8083
 ###### Variable section - END

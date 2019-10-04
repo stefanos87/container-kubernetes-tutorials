@@ -1,8 +1,8 @@
 source setenv.sh
-echo ${cyn}Removing Docker image ...${end}
-docker rmi -f $DOCKER_IMAGE_NAME:$DOCKER_IMAGE_VERSION
-echo ${cyn}Docker image removed${end}
+echo ${cyn}Removing container image ...${end}
+docker rmi -f $CONTAINER_IMAGE_NAME:$CONTAINER_IMAGE_VERSION
+echo ${cyn}Container image removed${end}
 echo
-echo ${cyn}Building Docker image ...${end}
-docker build -t $DOCKER_IMAGE_NAME:$DOCKER_IMAGE_VERSION .
-echo ${cyn}Docker image built${end}
+echo ${cyn}Building container image ...${end}
+docker build -t $CONTAINER_IMAGE_NAME:$CONTAINER_IMAGE_VERSION .
+echo ${cyn}Container image built${end}
