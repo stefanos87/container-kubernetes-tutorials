@@ -1,20 +1,20 @@
-# Docker Environment Variables tutorial
+# Container Environment Variables tutorial
 This tutorial provides code to test and understand how environment variables can be used to externalize and inject configuration in Docker based applications.
 
-It builds on ![Docker Basics Tutorial](https://github.com/robipozzi/docker-kubernetes-tutorials/tree/master/1-docker_basics) by extending Node.Js based web application which serves an HTML page and exposes the following 3 endpoints:
+It builds on ![Container basics tutorial](https://github.com/robipozzi/container-kubernetes-tutorials/tree/master/1-docker_basics) by extending Node.Js based web application which serves an HTML page and exposes the following 3 endpoints:
 * */healthz* endpoint - it returns a string, testing that the application is up and healthy
 * */restaurants* endpoint - it returns a list of restaurants in Json format
 * */dir* endpoint - it calls an endpoint that shows the upload directory, as defined by UPLOAD_DIR environment variable which has been injected in the application environment
 
 ## Prerequisites
-Prerequisites are described in ![Docker Basics Tutorial - Prerequisites](https://github.com/robipozzi/docker-kubernetes-tutorials/tree/master/1-docker_basics#Prerequisites) paragraph.
+Prerequisites are described in ![Container basics tutorial - Prerequisites](https://github.com/robipozzi/container-kubernetes-tutorials/tree/master/1-docker_basics#Prerequisites) paragraph.
 
 ## Application demo scenario
 Application code is provided in */app* subfolder.
 
 The application requires 2 environment variables, as it can be seen in the following code snippet from *app.js* file
 
-![](https://github.com/robipozzi/docker-kubernetes-tutorials/blob/master/2-docker_environment/images/code-snippet1.png)
+![](https://github.com/robipozzi/container-kubernetes-tutorials/blob/master/2-container_environment/images/code-snippet1.png)
 
 * one is called *UPLOAD_DIR*, and must be passed to the application by launching it with the following construct:
 
@@ -34,7 +34,7 @@ As it can be seen, an environment variable can be injected into a container with
 
 Once the Docker container is started, launch *http://localhost:8083/dir* endpoint which will return the upload directory used by application, as shown in the following snapshot:
 
-![](https://github.com/robipozzi/docker-kubernetes-tutorials/blob/master/2-docker_environment/images/dir_endpoint.png)
+![](https://github.com/robipozzi/container-kubernetes-tutorials/blob/master/2-container_environment/images/dir_endpoint.png)
 
 You can restart Docker container by changing *<YOUR_UPLOAD_DIR>* in *-e UPLOAD_DIR=<YOUR_UPLOAD_DIR>* and see how environment variable change affects the application.
 

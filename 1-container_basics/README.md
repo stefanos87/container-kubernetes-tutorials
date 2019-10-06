@@ -1,5 +1,5 @@
-# Docker basics tutorial
-This tutorial provides the entry point to start familiarize with basic Docker concepts and operations.
+# Container basics tutorial
+This tutorial provides the entry point to start familiarize with basic container technologies concepts and operations.
 
 A simple web application running on Node.Js is provided; it serves an HTML page and exposes the following 2 REST service endpoints:
 * */healthz* endpoint - it returns a string, testing that the application is up and healthy
@@ -15,7 +15,7 @@ To run the demo scenarios, the following software needs to be installed:
 Application code is provided in */app* subfolder and can be run by launching *app-run.sh* script, available in the repository root folder.
 
 ## Automation scripts available
-A *Dockerfile* is provided to build and run the application as a Docker container; plain standard Docker commands can be used to build the Docker image, push the Docker image to Docker Hub repository and run it as a Docker container, the following scripts are provided for convenience:
+A *Dockerfile* is provided to build and run the application as a container; plain standard Docker commands can be used to build the Docker image, push the Docker image to Docker Hub repository and run it as a Docker container, the following scripts are provided for convenience:
 * *docker-build.sh* - it can be launched to build the Docker image; the script removes the Docker image from the local registry and re-builds it.
 * *docker-run.sh* - it can be launched to run Docker container locally; the script removes running container and runs a fresh container instance.
 * *docker-push.sh* - it can be launched to push the Docker image to Docker Hub. You will need to modify *$DOCKER_IMAGE* parameter in *setenv.sh* appropriately to push to the correct Docker Hub repository.
