@@ -10,7 +10,7 @@ To run the demo scenarios, the following software needs to be installed:
 * *Node.js* - installation instructions are available for different platforms at *https://nodejs.org/en/download/*. The application has been developed and tested with Node.js v8.11.3.
 * *npm* - Node.js Package Manager is distributed with Node.js, which means that when you download Node.js, you automatically get npm installed on your computer. The application has been developed and tested with npm v5.6.0.
 * An *OCI compliant runtime*
-** *Docker* - installation instructions for Docker Community Edition are available for different platforms at *https://docs.docker.com/install/*. The application has been developed and tested with Docker Engine 18.09.2.
+    * *Docker* - installation instructions for Docker Community Edition are available for different platforms at *https://docs.docker.com/install/*. The application has been developed and tested with Docker Engine 18.09.2.
 
 ## Application demo scenario
 Application code is provided in */app* subfolder and can be run by launching *app-run.sh* script, available in the repository root folder.
