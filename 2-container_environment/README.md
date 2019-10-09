@@ -39,9 +39,18 @@ Once the Docker container is started, launch *http://localhost:8083/dir* endpoin
 You can restart Docker container by changing *<YOUR_UPLOAD_DIR>* in *-e UPLOAD_DIR=<YOUR_UPLOAD_DIR>* and see how environment variable change affects the application.
 
 ## Automation scripts available
-The following scripts are provided for convenience:
+A *Dockerfile* is provided to build and run the application as a container; plain standard OCI compliant commands (either Docker or Buildah/Podman) can be used to build the container image, push the container image to Docker Hub repository and run it as a container, the following scripts are provided for convenience:
+
+### Docker
 * *docker-build.sh* - it can be launched to build the Docker image; the script removes the Docker image from the local registry and re-builds it.
 * *docker-run.sh* - it can be launched to run Docker container locally; the script removes running container and runs a fresh container instance.
-* *docker-push.sh* - it can be launched to push the Docker image to Docker Hub. You will need to modify *$DOCKER_IMAGE* parameter in *setenv.sh* appropriately to push to the correct Docker Hub repository.
+* *docker-push.sh* - it can be launched to push the Docker image to Docker Hub. You will need to modify *$CONTAINER_IMAGE_NAME* parameter in *setenv-docker.sh* appropriately to push to the correct Docker Hub repository.
+
+All the relevant parameters are externalized and can be changed in *setenv-docker.sh* script.
+
+### Buildah / Podman
+* *container-build.sh* - it can be launched to build the container image using Buildah utility; the script removes the container image from the local registry and re-builds it.
+* *container-run.sh* - it can be launched to run container locally using Podman utility; the script removes running container and runs a fresh container instance.
+* *container-push.sh* - it can be launched to push the container image to Docker Hub. You will need to modify *$CONTAINER_IMAGE_NAME* parameter in *setenv.sh* appropriately to push to the correct Docker Hub repository.
 
 All the relevant parameters are externalized and can be changed in *setenv.sh* script.
