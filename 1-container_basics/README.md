@@ -27,6 +27,6 @@ All the relevant parameters are externalized and can be changed in *setenv.sh* s
 ### Docker
 * *docker-build.sh* - it can be launched to build the Docker image; the script removes the Docker image from the local registry and re-builds it.
 * *docker-run.sh* - it can be launched to run Docker container locally; the script removes running container and runs a fresh container instance.
-* *docker-push.sh* - it can be launched to push the Docker image to Docker Hub. You will need to modify *$DOCKER_IMAGE* parameter in *setenv.sh* appropriately to push to the correct Docker Hub repository.
+* *docker-push.sh* - it can be launched to push the Docker image to Docker Hub. You will need to modify *$CONTAINER_IMAGE_NAME* parameter in *setenv-docker.sh* appropriately to push to the correct Docker Hub repository.
 
 All the relevant parameters are externalized and can be changed in *setenv-docker.sh* script.
