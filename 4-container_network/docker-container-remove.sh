@@ -1,4 +1,4 @@
-source setenv.sh
+source setenv-docker.sh
 echo ${cyn}Removing Docker containers ...${end}
 docker rm -f $RESTAURANTS_BACKEND_CONTAINER_NAME
 docker rm -f $RESTAURANTS_UI_CONTAINER_NAME
