@@ -3,7 +3,7 @@ This tutorial provides code to test and understand how persistence can be manage
 
 Docker containers are, by nature, inherently volatile, which means they do not persist state between subsequent runs of the container. Since persistence is mandatory for any non trivial application, Docker obviously provides technical mechanisms to manage persistence through the usage of Docker volumes (see Docker official documentation https://docs.docker.com/storage/volumes/).
 
-The tutorial builds on previous ![Docker Environment Variables Tutorial](https://github.com/robipozzi/docker-kubernetes-tutorials/tree/master/2-docker_environment) by further extending NodeJs based web application to serve an HTML page and expose 6 endpoints:
+The tutorial builds on previous ![Docker environment variables tutorial](https://github.com/robipozzi/container-kubernetes-tutorials/tree/master/2-container_environment) by further extending NodeJs based web application to serve an HTML page and expose 6 endpoints:
 * */healthz* endpoint - it returns a string, testing that the application is up and healthy
 * */restaurants* endpoint - it returns a list of restaurants in Json format
 * */dir* endpoint - it calls an endpoint that shows the upload directory, as defined by UPLOAD_DIR environment variable which has been injected in the application environment
@@ -12,7 +12,7 @@ The tutorial builds on previous ![Docker Environment Variables Tutorial](https:/
 * */delete* endpoint - it calls an endpoint that deletes all the files in *<UPLOAD_DIR>* folder
 
 ## Prerequisites
-Prerequisites are described in ![Docker Basics Tutorial - Prerequisites](https://github.com/robipozzi/docker-kubernetes-tutorials/tree/master/1-docker_basics#Prerequisites) paragraph.
+Prerequisites are described in ![Docker basics tutorial - Prerequisites](https://github.com/robipozzi/container-kubernetes-tutorials/tree/master/1-container_basics#Prerequisites) paragraph.
 
 ## Application demo scenario
 Application code is provided in */app* subfolder and can be run by launching *app-run.sh* script, available in the repository root folder.
