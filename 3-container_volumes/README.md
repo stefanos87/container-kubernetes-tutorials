@@ -56,8 +56,8 @@ All the relevant parameters are externalized and can be changed in *setenv-docke
 
 ### Buildah / Podman
 * *container-build.sh* - it can be launched to build the container image using Buildah utility; the script removes the container image from the local registry and re-builds it.
-* *container-run-no-volume.sh* - it can be launched to run container locally using Podman utility; the script removes running container and runs a fresh container instance.
-* *docker-run-with-volume.sh* - it can be launched to run container locally using Podman utility; the script removes running container and runs a fresh container instance.
+* *container-run-no-volume.sh* - it can be launched to run container locally with no volumes attached, using Podman utility; the script removes running container and runs a fresh container instance.
+* *docker-run-with-volume.sh* - it can be launched to run container locally with volumes attached, using Podman utility; the script removes running container and runs a fresh container instance.
 * *container-push.sh* - it can be launched to push the container image to Docker Hub. You will need to modify *$CONTAINER_IMAGE_NAME* parameter in *setenv.sh* appropriately to push to the correct Docker Hub repository.
 
 All the relevant parameters are externalized and can be changed in *setenv.sh* script.
