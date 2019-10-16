@@ -18,9 +18,25 @@ To run the demo scenarios, the following software needs to be installed:
 ## Application demo scenario
 Application code is provided in */app* subfolder and can be run by launching *app-run.sh* script, available in the repository root folder.
 
-A *Dockerfile* is also provided to build and run the application as a Docker container. Once the Docker image is built, it can be run with the standard Docker run command: 
+### Running application as a Docker container
+A *Dockerfile* is provided to build and run the application as a Docker container. 
+First you need to build the container image by running the *docker build* command as follows:
+
+**docker build -t robipozzi/rpozzi-restaurants:1.0 .**
+
+Once the Docker image is built, it can be run with the standard Docker run command, as follows: 
 
 **docker run -it --name restaurant-app -p 8083:8082 -e EXPOSED_PORT=8083 robipozzi/rpozzi-restaurants:1.0**
+
+### Running application as a cri-o container
+The same *Dockerfile* can be used to build and run the application as a cri-o container. 
+First you need to build the container image by running the *builda bud* command as follows:
+
+**buildah bud -t robipozzi/rpozzi-restaurants:1.0 .**
+
+Once the container image is built, it can be run with the standard podman run command, as follows: 
+
+**podman run -it --name restaurant-app -p 8083:8082 -e EXPOSED_PORT=8083 robipozzi/rpozzi-restaurants:1.0**
 
 ## Automation scripts available
 A *Dockerfile* is provided to build and run the application as a container; plain standard OCI compliant commands (either Docker or Buildah/Podman) can be used to build the container image, push the container image to Docker Hub repository and run it as a container, the following scripts are provided for convenience:
