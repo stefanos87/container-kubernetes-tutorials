@@ -11,12 +11,12 @@ coffee3="${coffee} ${coffee} ${coffee}"
 ##### Terminal Colors - END
 
 ###### Variable section - START
-DOCKER_IMAGE_NAME=robipozzi/rpozzi-restaurants
-DOCKER_IMAGE_VERSION=1.2
-DOCKER_CONTAINER_NAME=restaurant-app
-DOCKER_CONTAINER_PORT=8083
+CONTAINER_IMAGE_NAME=robipozzi/rpozzi-restaurants
+CONTAINER_IMAGE_VERSION=1.2
+CONTAINER_NAME=restaurant-app
+CONTAINER_PORT=8083
 UPLOAD_DIR=/Users/robertopozzi/temp/upload
 UPLOAD_DIR_MOUNT=/tmp/upload
-CONFIG_DIR=/Users/robertopozzi/dev/robipozzi-kubernetes/docker-kubernetes-tutorials/3-docker_volumes/app/config
+CONFIG_DIR=/Users/robertopozzi/dev/robipozzi-kubernetes/container-kubernetes-tutorials/3-container_volumes/app/config
 CONFIG_DIR_MOUNT=/config
 ###### Variable section - END

@@ -15,4 +15,5 @@ CONTAINER_IMAGE_NAME=robipozzi/rpozzi-restaurants
 CONTAINER_IMAGE_VERSION=1.1
 CONTAINER_NAME=restaurant-app
 CONTAINER_PORT=8083
+UPLOAD_DIR=/Users/robertopozzi/temp/upload
 ###### Variable section - END

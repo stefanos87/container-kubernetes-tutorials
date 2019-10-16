@@ -1,6 +1,6 @@
 source setenv-docker.sh
 echo ${cyn}Removing Docker image ...${end}
-docker rmi -f $DOCKER_IMAGE_NAME:$DOCKER_IMAGE_VERSION
+docker rmi -f $CONTAINER_IMAGE_NAME:$CONTAINER_IMAGE_VERSION
 echo ${cyn}Docker image removed${end}
 echo
 echo ${cyn}Building Docker image ...${end}

@@ -21,7 +21,7 @@ CONTAINER_BUILD_CMD=bud
 CONTAINER_RUN_UTILITY=podman
 UPLOAD_DIR=/Users/robertopozzi/temp/upload
 UPLOAD_DIR_MOUNT=/tmp/upload
-CONFIG_DIR=/Users/robertopozzi/dev/robipozzi-kubernetes/docker-kubernetes-tutorials/3-docker_volumes/app/config
+CONFIG_DIR=/Users/robertopozzi/dev/robipozzi-kubernetes/container-kubernetes-tutorials/3-container_volumes/app/config
 CONFIG_DIR_MOUNT=/config
 ###### Variable section - END
 
