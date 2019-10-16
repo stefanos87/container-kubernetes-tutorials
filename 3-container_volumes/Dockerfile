@@ -1,4 +1,4 @@
-FROM node:12.6.0
+FROM docker.io/node:12.6.0
 LABEL author="Roberto Pozzi"
 WORKDIR "/app"
 # Create upload directory
