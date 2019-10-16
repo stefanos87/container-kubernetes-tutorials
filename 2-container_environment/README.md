@@ -24,7 +24,13 @@ The application requires 2 environment variables, as it can be seen in the follo
 
 The *app-run.sh* script, available in the repository root folder, is provided to automate application launch with the appropriate configuration.
 
-A *Dockerfile* is also provided to build and run the application as a Docker container. Once the Docker image is built, it can be run with the standard Docker run command: 
+### Running application as a Docker container
+A *Dockerfile* is provided to build and run the application as a Docker container. 
+First you need to build the container image by running the *docker build* command as follows:
+
+**docker build -t robipozzi/rpozzi-restaurants:1.1 .**
+
+Once the Docker image is built, it can be run with the standard Docker run command: 
 
 **docker run -it --name restaurant-app -p 8083:8082 -e UPLOAD_DIR=<YOUR_UPLOAD_DIR> -e EXPOSED_PORT=8083 robipozzi/rpozzi-restaurants:1.1**
 
@@ -37,6 +43,18 @@ Once the Docker container is started, launch *http://localhost:8083/dir* endpoin
 ![](https://github.com/robipozzi/container-kubernetes-tutorials/blob/master/2-container_environment/images/dir_endpoint.png)
 
 You can restart Docker container by changing *<YOUR_UPLOAD_DIR>* in *-e UPLOAD_DIR=<YOUR_UPLOAD_DIR>* and see how environment variable change affects the application.
+
+### Running application as a cri-o container
+The same *Dockerfile* can be used to build and run the application as a cri-o container. 
+First you need to build the container image by running the *builda bud* command as follows:
+
+**buildah bud -t robipozzi/rpozzi-restaurants:1.1 .**
+
+Once the container image is built, it can be run with the standard podman run command, as follows: 
+
+**podman run -it --name restaurant-app -p 8083:8082 -e UPLOAD_DIR=<YOUR_UPLOAD_DIR> -e EXPOSED_PORT=8083 robipozzi/rpozzi-restaurants:1.1**
+
+As it can be seen, the same exact construct used with Docker can be applied by using Buildah and Podman.
 
 ## Automation scripts available
 A *Dockerfile* is provided to build and run the application as a container; plain standard OCI compliant commands (either Docker or Buildah/Podman) can be used to build the container image, push the container image to Docker Hub repository and run it as a container, the following scripts are provided for convenience:

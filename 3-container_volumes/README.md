@@ -17,7 +17,11 @@ Prerequisites are described in ![Container basics tutorial - Prerequisites](http
 ## Application demo scenario
 Application code is provided in */app* subfolder and can be run by launching *app-run.sh* script, available in the repository root folder.
 
-A *Dockerfile* is also provided to build and run the application as a container. 
+### Running application as a Docker container
+A *Dockerfile* is provided to build and run the application as a Docker container. 
+First you need to build the container image by running the *docker build* command as follows:
+
+**docker build -t robipozzi/rpozzi-restaurants:1.2 .**
 
 Once the container image is built, run the container with the following standard Docker run command, where */tmp/upload* is a folder inside the container filesystem (*docker-run-no-volume.sh* script is provided to automate this task avoiding errors): 
 
@@ -42,6 +46,24 @@ Now run again the following steps:
 4. run the container again, with the same docker run command as before (or run *docker-run-with-volume.sh* script)
 5. call *http://localhost:8083/list* endpoint: since the container now uses a volume and mounts a local folder to the container filesystem you will now see the files previously uploaded
 6. stop the container by issuing CTRL+C in the terminal windows
+
+### Running application as a cri-o container
+The same *Dockerfile* can be used to build and run the application as a cri-o container. 
+First you need to build the container image by running the *builda bud* command as follows:
+
+**buildah bud -t robipozzi/rpozzi-restaurants:1.2 .**
+
+Once the container image is built, the same exact scenarios as described in the Docker paragraph can be run with the standard podman run command, as follows: 
+
+**podman run -it --name restaurant-app -p 8083:8082 -e UPLOAD_DIR=/tmp/upload -e EXPOSED_PORT=8083 robipozzi/rpozzi-restaurants:1.2**
+
+to run the container with no volumes attached,
+
+**podman run -it --name restaurant-app -p 8083:8082 -v /Users/robertopozzi/dev/robipozzi-kubernetes/container-kubernetes-tutorials/3-container_volumes/app/config:/config -v /Users/robertopozzi/temp/upload:/tmp/upload -e CONFIG_DIR=/config -e UPLOAD_DIR=/tmp/upload -e EXPOSED_PORT=8083 robipozzi/rpozzi-restaurants:1.2**
+
+to run the container with volumes attached.
+
+As it can be seen, the same exact construct used with Docker can be applied by using Buildah and Podman.
 
 ## Automation scripts available
 A *Dockerfile* is provided to build and run the application as a container; plain standard OCI compliant commands (either Docker or Buildah/Podman) can be used to build the container image, push the container image to Docker Hub repository and run it as a container, the following scripts are provided for convenience:
