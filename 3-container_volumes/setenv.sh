@@ -12,7 +12,7 @@ coffee3="${coffee} ${coffee} ${coffee}"
 
 ###### Variable section - START
 CONTAINER_IMAGE_NAME=robipozzi/rpozzi-restaurants
-CONTAINER_IMAGE_VERSION=1.1
+CONTAINER_IMAGE_VERSION=1.2
 CONTAINER_NAME=restaurant-app
 CONTAINER_PORT=8083
 CONTAINER_UTILITY_CHOICE=
