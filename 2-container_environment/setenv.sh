@@ -27,6 +27,7 @@ UPLOAD_DIR=/Users/robertopozzi/temp/upload
 #####################
 main()
 {
+	echo ""
 	#setContainerUtility
 }
 

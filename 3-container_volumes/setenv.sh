@@ -30,6 +30,7 @@ CONFIG_DIR_MOUNT=/config
 #####################
 main()
 {
+	echo ""
 	#setContainerUtility
 }
 

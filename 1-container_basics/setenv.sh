@@ -26,6 +26,7 @@ CONTAINER_RUN_UTILITY=podman
 #####################
 main()
 {
+	echo ""
 	#setContainerUtility
 }
 

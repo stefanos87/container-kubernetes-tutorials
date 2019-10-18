@@ -1,5 +1,5 @@
 # Container volumes tutorial
-This tutorial provides code to test and understand how persistence can be managed in Docker based applications.
+This tutorial provides code to test and understand how persistence can be managed in container based applications.
 
 Containers are, by nature, inherently volatile, which means they do not persist state between subsequent runs of the container. Since persistence is mandatory for any non trivial application, container technologies obviously provide technical mechanisms to manage persistence through the usage of volumes (see, as an example, Docker official documentation https://docs.docker.com/storage/volumes/).
 
@@ -49,19 +49,17 @@ Now run again the following steps:
 
 ### Running application as a cri-o container
 The same *Dockerfile* can be used to build and run the application as a cri-o container. 
-First you need to build the container image by running the *builda bud* command as follows:
+First you need to build the container image by running the *buildah bud* command as follows:
 
 **buildah bud -t robipozzi/rpozzi-restaurants:1.2 .**
 
-Once the container image is built, the same exact scenarios as described in the Docker paragraph can be run with the standard podman run command, as follows: 
+Once the container image is built, the same exact scenarios as described in the Docker paragraph can be tested by starting container with the standard *podman run* command, as follows (this command will run the container with no volumes attached): 
 
 **podman run -it --name restaurant-app -p 8083:8082 -e UPLOAD_DIR=/tmp/upload -e EXPOSED_PORT=8083 robipozzi/rpozzi-restaurants:1.2**
 
-to run the container with no volumes attached,
+Once you have finished the tests, stop the container by issuing CTRL+C in the terminal windows and then issue the following command to run the container with volumes attached:
 
 **podman run -it --name restaurant-app -p 8083:8082 -v /Users/robertopozzi/dev/robipozzi-kubernetes/container-kubernetes-tutorials/3-container_volumes/app/config:/config -v /Users/robertopozzi/temp/upload:/tmp/upload -e CONFIG_DIR=/config -e UPLOAD_DIR=/tmp/upload -e EXPOSED_PORT=8083 robipozzi/rpozzi-restaurants:1.2**
-
-to run the container with volumes attached.
 
 As it can be seen, the same exact construct used with Docker can be applied by using Buildah and Podman.
 

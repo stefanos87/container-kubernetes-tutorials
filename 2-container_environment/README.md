@@ -46,11 +46,11 @@ You can restart Docker container by changing *<YOUR_UPLOAD_DIR>* in *-e UPLOAD_D
 
 ### Running application as a cri-o container
 The same *Dockerfile* can be used to build and run the application as a cri-o container. 
-First you need to build the container image by running the *builda bud* command as follows:
+First you need to build the container image by running the *buildah bud* command as follows:
 
 **buildah bud -t robipozzi/rpozzi-restaurants:1.1 .**
 
-Once the container image is built, it can be run with the standard podman run command, as follows: 
+Once the container image is built, it can be run with the standard *podman run* command, as follows: 
 
 **podman run -it --name restaurant-app -p 8083:8082 -e UPLOAD_DIR=<YOUR_UPLOAD_DIR> -e EXPOSED_PORT=8083 robipozzi/rpozzi-restaurants:1.1**
 
