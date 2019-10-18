@@ -1,8 +1,10 @@
 # Container networking tutorial
 This tutorial provides code to test and understand how container networking works.
 
-The tutorial builds on previous ![Container volumes tutorial](https://github.com/robipozzi/container-kubernetes-tutorials/tree/master/3-container_volumes) by splitting the Restaurant Management web application in 3 different microservices, each one deployed as a container:
-* 
+The tutorial builds on previous ![Container volumes tutorial](https://github.com/robipozzi/container-kubernetes-tutorials/tree/master/3-container_volumes) by splitting the Restaurant Management web application in 3 different microservices, each one deployed as a separate container:
+* ![*Restaurants UI*](https://github.com/robipozzi/container-kubernetes-tutorials/tree/master/4-container_network/rpozzi-restaurants-ui) microservice 
+* *Restaurants backend* microservice
+* *Upload manager* microservice
 
 Overall, the application still exposes the same 6 endpoints:
 * */healthz* endpoint - it returns a string, testing that the application is up and healthy
