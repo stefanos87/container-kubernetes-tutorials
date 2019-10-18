@@ -11,7 +11,7 @@ To run the demo scenarios, the following software needs to be installed:
 * *npm* - Node.js Package Manager is distributed with Node.js, which means that when you download Node.js, you automatically get npm installed on your computer. The application has been developed and tested with npm v5.6.0.
 * An *OCI compliant runtime*. The code provided in the tutorials have been developed and tested on the following container engines:
     * *Docker* - installation instructions for Docker Community Edition are available for different platforms at *https://docs.docker.com/install/*. The application has been developed and tested with Docker Engine 19.03.2.
-    * *cri-o (https://cri-o.io/)* - it is an implementation of the Kubernetes CRI (Container Runtime Interface) to enable using OCI (Open Container Initiative) compatible runtimes. It is a lightweight alternative to using Docker as the container runtime. Cri-o is currently supported on Linux platforms only, installation instructions for different platforms are available at *https://github.com/cri-o/cri-o#installing-cri-o*. The following utilities also need to be installed to build and run container images when using cri-o as the container engine:
+    * *cri-o (https://cri-o.io/)* - it is an implementation of the Kubernetes CRI (Container Runtime Interface) to enable usage of OCI (Open Container Initiative) compatible runtimes. It is a lightweight alternative to using Docker as the container runtime. Cri-o is currently supported on Linux platforms only, installation instructions for different Linux distributions are available at *https://github.com/cri-o/cri-o#installing-cri-o*. The following utilities also need to be installed to build and run container images when using cri-o as the container engine:
         * *Buildah (https://buildah.io/)* - Buildah is a tool that facilitates building OCI container images. Installation instructions for different platforms are available at *https://github.com/containers/buildah/blob/master/install.md*
         * *Podman (https://podman.io/)* - Podman is a utility, provided as part of the libpod library, that can be used to create, run and maintain containers. Installation instructions for different platforms are available at *https://podman.io/getting-started/installation*
 
@@ -30,11 +30,11 @@ Once the Docker image is built, it can be run with the standard Docker run comma
 
 ### Running application as a cri-o container
 The same *Dockerfile* can be used to build and run the application as a cri-o container. 
-First you need to build the container image by running the *builda bud* command as follows:
+First you need to build the container image by running the *buildah bud* command as follows:
 
 **buildah bud -t robipozzi/rpozzi-restaurants:1.0 .**
 
-Once the container image is built, it can be run with the standard podman run command, as follows: 
+Once the container image is built, it can be run with the standard *podman run* command, as follows: 
 
 **podman run -it --name restaurant-app -p 8083:8082 -e EXPOSED_PORT=8083 robipozzi/rpozzi-restaurants:1.0**
 
