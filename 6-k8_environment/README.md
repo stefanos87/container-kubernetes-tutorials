@@ -1,1 +1,1 @@
-# Kubernetes Environment Variables tutorial
+# Kubernetes environment variables tutorial

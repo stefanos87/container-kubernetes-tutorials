@@ -2,7 +2,7 @@
 [TODO]
 
 ## Prerequisites
-Prerequisites are described in ![Docker Basics Tutorial - Prerequisites](https://github.com/robipozzi/docker-kubernetes-tutorials/tree/master/1-docker_basics#Prerequisites) paragraph.
+Prerequisites are described in ![Container basics tutorial - Prerequisites](https://github.com/robipozzi/container-kubernetes-tutorials/tree/master/1-container_basics#Prerequisites) paragraph.
 
 ## Automation scripts available
 A *Dockerfile* is provided to build and run the application as a Docker container; plain standard Docker commands can be used to build the Docker image, push the Docker image to Docker Hub repository and run it as a Docker container, the following scripts are provided for convenience:
