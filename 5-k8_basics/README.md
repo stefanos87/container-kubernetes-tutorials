@@ -5,7 +5,7 @@ The tutorial builds on previous container tutorial and uses the container image 
 
 ## Prerequisites
 To follow the instructions in this tutorial you will need either a Kubernetes and/or a Red Hat OpenShift installation; this tutorial has been developed and tested on the following two environments, for which detailed instructions are provided on how to instantiate and operate with:
-* *IBM Kubernetes Services* - [TODO]
+* *IBM Kubernetes Services* - IBM Cloud provides a managed Kubernetes service, which has been used to develop this tutorial 1.14.7 [TODO]
 * *Red Hat OpenShift* available in an IBM Bluedemos environment - [TODO] *https://bluedemos.com/show/2459*
 
 Every Kubernetes and Red Hat OpenShift installation (either installed on-premises or instantiated on a Cloud Provider) should work but have not been tested, please refer to the specific Cloud Provider documentation for instructions on how to instantiate, authenticate and operate with Kubernetes and RH OpenShift provided.
@@ -15,12 +15,21 @@ Every Kubernetes and Red Hat OpenShift installation (either installed on-premise
 [TODO]
 
 ### Kubernetes Deployment
+A Deployment is a Kubernetes object used to describe the characteristics and the desired state of [TODO] 
+Please refer to Kubernetes documentation *https://kubernetes.io/docs/concepts/workloads/controllers/deployment/* for more information.
+The *restaurant-app.yaml* provided in this repository has a section
 [TODO]
 
 ### Kubernetes Service
+A Service is a Kubernetes object that [TODO]
+Please refer to Kubernetes documentation *https://kubernetes.io/docs/concepts/services-networking/service/* for more information.
+The *restaurant-app.yaml* provided in this repository has a section
 [TODO]
 
 ### Kubernetes Ingress
+An Ingress is a Kubernetes object that [TODO]
+Please refer to Kubernetes documentation *https://kubernetes.io/docs/concepts/services-networking/ingress/* for more information.
+The *restaurant-app.yaml* provided in this repository has a section
 [TODO]
 
 ### Red Hat OpenShift Route
