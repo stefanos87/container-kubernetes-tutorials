@@ -1,14 +1,26 @@
 # Kubernetes basics tutorial
-This tutorial provides code to explore Kubernetes (https://kubernetes.io/) basic capabilities, such as Deployments and Services.
+This tutorial provides the container image and the relative yaml configuration to deploy an application to Kubernetes (https://kubernetes.io/) and explore its basic capabilities, such as Deployments and Services.
 
-The tutorial builds on previous container tutorial and uses the container image **robipozzi/rpozzi-restaurants:1.0** which has been built in ![Container basics tutorial](https://github.com/robipozzi/container-kubernetes-tutorials/tree/master/1-container_basics) and is available in Docker Hub (*https://hub.docker.com/*) publicly accessible registry (see *https://hub.docker.com/r/robipozzi/rpozzi-restaurants/tags*).
+The tutorial builds on previous container tutorial and uses **robipozzi/rpozzi-restaurants:1.0** container image, which has been built in ![Container basics tutorial](https://github.com/robipozzi/container-kubernetes-tutorials/tree/master/1-container_basics); the container image is available in Docker Hub (*https://hub.docker.com/*) publicly accessible registry (see *https://hub.docker.com/r/robipozzi/rpozzi-restaurants/tags*).
 
 ## Prerequisites
-To follow the instructions in this tutorial you will need either a Kubernetes and/or a Red Hat OpenShift installation; this tutorial has been developed and tested on the following two environments, for which detailed instructions are provided on how to instantiate and operate with:
-* *IBM Kubernetes Services* - IBM Cloud provides a managed Kubernetes service, which has been used to develop this tutorial 1.14.7 [TODO]
-* *Red Hat OpenShift* available in an IBM Bluedemos environment - [TODO] *https://bluedemos.com/show/2459*
+To follow the instructions in this tutorial you will need either a Kubernetes and/or a Red Hat OpenShift installation; this tutorial has been developed and tested on the following two environments, for which detailed instructions on how to instantiate and operate with are provided:
+* *IBM Kubernetes Service* - IBM Cloud (*https://cloud.ibm.com/*) provides a managed Kubernetes service, with a free cluster tier available.
+* *Red Hat OpenShift* on IBM Bluedemos environment - IBM provides a free demo environment, available at the following URL  *https://bluedemos.com/show/2459* where a full functional Red Hat OpenShift 3.11 installation can be used for demo and test purposes.
 
-Every Kubernetes and Red Hat OpenShift installation (either installed on-premises or instantiated on a Cloud Provider) should work but have not been tested, please refer to the specific Cloud Provider documentation for instructions on how to instantiate, authenticate and operate with Kubernetes and RH OpenShift provided.
+Every Kubernetes and Red Hat OpenShift installation (either installed on-premises or instantiated on a Cloud Provider) should work but have not been tested during the development of this tutorial. 
+Please refer to the specific Cloud Provider documentation for instructions on how to instantiate, authenticate and operate with Kubernetes and/or Red Hat OpenShift environments provided.
+
+### IBM Kubernetes Service
+[TODO]
+1. Access IBM Cloud at *https://cloud.ibm.com/* [TODO]
+2. Go to Catalog and click *Containers* link in the menu on the left
+3. Click on Kubernetes Service tile and then click *Create* button
+4. Select the Free plan (so that you will be able to experiment with full functional Kubernetes cluster at no charge for 1 month)
+5. This tutorial has been tested with version 1.14.7 
+[TODO]
+
+### Red Hat OpenShift
 [TODO]
 
 ## Application demo scenario
