@@ -1,5 +1,5 @@
 # Kubernetes basics tutorial
-This tutorial provides code to explore ![Kubernetes](https://kubernetes.io/) basic capabilities, such as Deployments and Services.
+This tutorial provides code to explore Kubernetes (https://kubernetes.io/) basic capabilities, such as Deployments and Services.
 
 The tutorial builds on previous container tutorial and uses the container image **robipozzi/rpozzi-restaurants:1.0** which has been built in ![Container basics tutorial](https://github.com/robipozzi/container-kubernetes-tutorials/tree/master/1-container_basics) and is available in Docker Hub (*https://hub.docker.com/*) publicly accessible registry (see *https://hub.docker.com/r/robipozzi/rpozzi-restaurants/tags*).
 
