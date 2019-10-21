@@ -50,43 +50,50 @@ All usernames and passwords that you will eventually need to work within the env
 #### Red Hat OpenShift authentication
 [TODO]
 
-## Application demo scenario
+## 1. Application demo scenario
 The Restaurant Management application, in the version developed in ![Container basics tutorial](https://github.com/robipozzi/container-kubernetes-tutorials/tree/master/1-container_basics) gets deployed to Kubernetes and can be tested on that. 
 
+### Deploy and run application on IBM Kubernetes Service
 The *restaurant-app.yaml* file, provided in this repository, defines all the configurations needed to deploy and run the application in Kubernetes cluster.
 
-Once you have authenticated to Kubernetes cluster, as described in the *Prerequisites - authentication* sections (either IKS or RHOCP), you can just issue the following command
+Once you have authenticated to Kubernetes cluster, as described in the *IBM Kubernetes Service authentication* section, you can just issue the following command
 
 **kubectl apply -f restaurant-app.yaml**
 
+Once the command has run successfully you can **http://<PUBLIC_IP>:31114**, where <PUBLIC_IP> is the Public IP Address of your Kubernetes cluster, that you wrote down before.
+
 The command above will create all the necessary Kubernetes objects in your cluster:
 
-* ### Kubernetes Deployment
+#### Kubernetes Deployment
 A Deployment is a Kubernetes object used to describe the characteristics and the desired state of an application component.
 Please refer to Kubernetes documentation *https://kubernetes.io/docs/concepts/workloads/controllers/deployment/* for more information and details.
-The *restaurant-app.yaml* provided in this repository defines a Deployment for Restaurant Manage
+
+The *restaurant-app.yaml* provided in this repository defines the Deployment for Restaurant Management application:
+* A Deployment name **restaurant-basic**
+* The Desired State **replicas: 1**, meaning that just one instance of the Pod must be running at all time
+* The **matchLabels** section defines which Pods will be managed by this Deployment object, the labels must exactly match the ones defined in the **labels** array in *template:metadata* section 
+* The container image **robipozzi/rpozzi-restaurants:1.0** the container in the Pod will be instantiated from; the image will be pulled from Docker Hub
+
 ![](https://github.com/robipozzi/container-kubernetes-tutorials/blob/master/5-k8_basics/images/k8-deployment.png)
-[TODO]
 
-### Kubernetes Service
-A Service is a Kubernetes object that [TODO]
+#### Kubernetes Service
+A Service is the abstraction through which Kubernetes manages the requests, routing to the appropriate Pods
 Please refer to Kubernetes documentation *https://kubernetes.io/docs/concepts/services-networking/service/* for more information.
-The *restaurant-app.yaml* provided in this repository has a section
+
+The *restaurant-app.yaml* provided in this repository defines a NodePort type of Service for Restaurant Management application, exposing port 31114 on the Kubernetes cluster nodes.
 [TODO]
 
-### Kubernetes Ingress
+#### Kubernetes Ingress
 An Ingress is a Kubernetes object that [TODO]
 Please refer to Kubernetes documentation *https://kubernetes.io/docs/concepts/services-networking/ingress/* for more information.
+
 The *restaurant-app.yaml* provided in this repository has a section
 [TODO]
 
-### Red Hat OpenShift Route
+### Deploy and run application on Red Hat OpenShift
 [TODO]
 
-### Deploy and run application on IBM Kubernetes Service
-A *restaurant-app.yaml* is provided to build and run the application as a Docker container. 
-
-### Deploy and run application on Red Hat OpenShift
+#### Red Hat OpenShift Route
 [TODO]
 
 ## Automation scripts available
