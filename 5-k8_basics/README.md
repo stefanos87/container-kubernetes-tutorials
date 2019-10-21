@@ -13,10 +13,13 @@ Please refer to the specific Cloud Provider documentation for instructions on ho
 
 ### IBM Kubernetes Service
 [TODO]
-1. Access IBM Cloud at *https://cloud.ibm.com/* [TODO]
-2. Go to Catalog and click *Containers* link in the menu on the left
+1. Access IBM Cloud at *https://cloud.ibm.com/*, if you do not have an account you can create one for free
+2. Go to Catalog and click *Containers* link in the menu on the left 
+![](https://github.com/robipozzi/container-kubernetes-tutorials/blob/master/5-k8_basics/images/catalog.png)
 3. Click on Kubernetes Service tile and then click *Create* button
+![](https://github.com/robipozzi/container-kubernetes-tutorials/blob/master/5-k8_basics/images/create-button.png)
 4. Select the Free plan (so that you will be able to experiment with full functional Kubernetes cluster at no charge for 1 month)
+![](https://github.com/robipozzi/container-kubernetes-tutorials/blob/master/5-k8_basics/images/create-cluster.png)
 5. This tutorial has been tested with version 1.14.7 
 [TODO]
 
