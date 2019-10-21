@@ -20,10 +20,18 @@ You can have access to a Kubernetes cluster installation on IBM Cloud, here foll
 ![](https://github.com/robipozzi/container-kubernetes-tutorials/blob/master/5-k8_basics/images/create-button.png)
 4. Select the Free plan (you will be able to experiment with full functional Kubernetes cluster at no charge for 1 month), leave all the defaults and then click *Create cluster* button; this tutorial has been tested with version 1.14.7 
 ![](https://github.com/robipozzi/container-kubernetes-tutorials/blob/master/5-k8_basics/images/create-cluster.png)
-5. Once the cluster has been created (it usually takes 10 minutes or more) go to *Access* section that will give you all the instructions to download, install and configure the command lines needed to interact with Kubernetes, together with instructions on how to connect and authenticate to your cluster
+5. Once the cluster has been created (it usually takes 10 minutes or more) go to *Access* section that will give you all the instructions to download, install and configure the command lines needed to interact with Kubernetes
 ![](https://github.com/robipozzi/container-kubernetes-tutorials/blob/master/5-k8_basics/images/cluster-access.png)
 6. Go to *Worker Nodes* section and take not of *Public IP*, you will need it to access the application, once deployed
 ![](https://github.com/robipozzi/container-kubernetes-tutorials/blob/master/5-k8_basics/images/public-ip.png)
+
+#### IBM Kubernetes Service authentication
+The *Access* section of your cluster describes how to connect and authenticate to your cluster; you basically need to:
+1. Start a terminal and authenticate to IBM Cloud with the following **ibmcloud login -a cloud.ibm.com -r <YOUR_CLUSTER_REGION> -g <YOUR_CLUSTER_GROUP>**
+2. Authenticate to the Kubernetes cluster with the following **ibmcloud ks cluster config --cluster <YOUR_CLUSTER_ID>**
+3. Export the **KUBECONFIG** environment variable as described in the *Access* section of your cluster
+The specific commands, with the correct values for your cluster are in the *Access* section of your cluster.
+From now on you can use **kubectl** commands to interact with the cluster
 
 ### Use Red Hat OpenShift
 You can have access to a Red Hat OpenShift cluster installation on IBM Bluedemos environment, here following you will find the instructions to instantiate one:
@@ -37,13 +45,23 @@ You can have access to a Red Hat OpenShift cluster installation on IBM Bluedemos
 
 All usernames and passwords that you will eventually need to work within the environment are available in *Lab01 Guide* that you can find in *https://bluedemos.com/show/2459* Home Page.
 
-## Application demo scenario
+#### Red Hat OpenShift authentication
 [TODO]
 
+## Application demo scenario
+The Restaurant Management application, in the version developed in ![Container basics tutorial](https://github.com/robipozzi/container-kubernetes-tutorials/tree/master/1-container_basics) gets deployed to Kubernetes and can be tested on that. 
+The *restaurant-app.yaml* file, provided in this repository, defines all the configurations needed to deploy and run the application in Kubernetes cluster.
+Once you have authenticated to Kubernetes cluster, as described in the *Prerequisites* section, you can just issue the following command, which will create all the necessary Kubernetes objects in your cluster:
+
+**kubectl apply -f restaurant-app.yaml**
+
+
+
 ### Kubernetes Deployment
-A Deployment is a Kubernetes object used to describe the characteristics and the desired state of [TODO] 
-Please refer to Kubernetes documentation *https://kubernetes.io/docs/concepts/workloads/controllers/deployment/* for more information.
-The *restaurant-app.yaml* provided in this repository has a section
+A Deployment is a Kubernetes object used to describe the characteristics and the desired state of an application component.
+Please refer to Kubernetes documentation *https://kubernetes.io/docs/concepts/workloads/controllers/deployment/* for more information and details.
+The *restaurant-app.yaml* provided in this repository defines a Deployment for Restaurant Manage
+![](https://github.com/robipozzi/container-kubernetes-tutorials/blob/master/5-k8_basics/images/k8-deployment.png)
 [TODO]
 
 ### Kubernetes Service
