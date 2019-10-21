@@ -10,6 +10,12 @@ It builds on ![Container basics tutorial](https://github.com/robipozzi/container
 Prerequisites are described in ![Container basics tutorial - Prerequisites](https://github.com/robipozzi/container-kubernetes-tutorials/tree/master/1-container_basics#Prerequisites) paragraph.
 
 ## Application demo scenario
+The present GitHub repository provides all the code and configuration files needed to run and test the Restaurant Management application.
+
+1. Start a terminal in your environment
+2. If you haven't done already, download the files with the following command **git clone https://github.com/robipozzi/container-kubernetes-tutorials.git**
+3. cd to **container-kubernetes-tutorials/2-container_environment**
+
 Application code is provided in */app* subfolder.
 
 The application requires 2 environment variables, as it can be seen in the following code snippet from *app.js* file

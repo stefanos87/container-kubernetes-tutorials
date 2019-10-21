@@ -69,7 +69,11 @@ All usernames and passwords that you will eventually need to work within the env
 From now on you can use either **oc** or **kubectl** commands to interact with the OpenShift cluster.
 
 ## 2. Application demo scenario
-The Restaurant Management application, in the version developed in ![Container basics tutorial](https://github.com/robipozzi/container-kubernetes-tutorials/tree/master/1-container_basics) gets deployed to Kubernetes and can be tested on that. 
+The present GitHub repository provides all the configuration files and scripts needed to deploy and test the Restaurant Management application to Kubernetes, in the version previously developed in ![Container basics tutorial](https://github.com/robipozzi/container-kubernetes-tutorials/tree/master/1-container_basics).
+
+1. Start a terminal in your environment
+2. Download the files with the following command **git clone https://github.com/robipozzi/container-kubernetes-tutorials.git**
+3. cd to **container-kubernetes-tutorials/5-k8_basics**
 
 ### 2.1 Deploy and run application on IBM Kubernetes Service
 The *restaurant-app.yaml* file, provided in this repository, defines all the configurations needed to deploy and run the application in Kubernetes cluster.
@@ -140,7 +144,7 @@ Once the command has run successfully, open a browser and do the following:
 
 ![](https://github.com/robipozzi/container-kubernetes-tutorials/blob/master/5-k8_basics/images/ocp-console.png)
 
-2. Click *Application* link in the menu on the left and have a look at *Deployment* and *Services* links
+2. Click *Applications* link in the menu on the left and have a look at *Deployments* and *Services* links
 
 ![](https://github.com/robipozzi/container-kubernetes-tutorials/blob/master/5-k8_basics/images/ocp-application.png)
 

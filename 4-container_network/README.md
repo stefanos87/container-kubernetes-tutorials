@@ -20,6 +20,11 @@ As described before, the different endpoints are implemented by different micros
 Prerequisites are described in ![Container basics tutorial - Prerequisites](https://github.com/robipozzi/container-kubernetes-tutorials/tree/master/1-container_basics#Prerequisites) paragraph.
 
 ## Application demo scenario
+The present GitHub repository provides all the code and configuration files needed to run and test the Restaurant Management application.
+
+1. Start a terminal in your environment
+2. If you haven't done already, download the files with the following command **git clone https://github.com/robipozzi/container-kubernetes-tutorials.git**
+3. cd to **container-kubernetes-tutorials/4-container_network**
 [TODO]
 
 ## Automation scripts available

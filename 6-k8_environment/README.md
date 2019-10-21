@@ -7,7 +7,11 @@ The tutorial builds on previous container tutorial and uses **robipozzi/rpozzi-r
 Prerequisites for the execution of this tutorial are described in ![Kubernetes basics tutorial - Prerequisites](https://github.com/robipozzi/container-kubernetes-tutorials/tree/master/5-k8_basics#Prerequisites) paragraph.
 
 ## 2. Application demo scenario
-The Restaurant Management application, in the version developed in ![Container basics tutorial](https://github.com/robipozzi/container-kubernetes-tutorials/tree/master/2-container_environment) gets deployed to Kubernetes and can be tested on that. 
+The present GitHub repository provides all the configuration files and scripts needed to deploy and test the Restaurant Management application to Kubernetes, in the version previously developed in ![Container basics tutorial](https://github.com/robipozzi/container-kubernetes-tutorials/tree/master/2-container_environment).
+
+1. Start a terminal in your environment
+2. If you havent't done already, download the files with the following command **git clone https://github.com/robipozzi/container-kubernetes-tutorials.git**
+3. cd to **container-kubernetes-tutorials/6-k8_environment** 
 
 ### 2.1 Deploy and run application on IBM Kubernetes Service
 The *restaurant-app.yaml* file, provided in this repository, defines all the configurations needed to deploy and run the application in Kubernetes cluster.

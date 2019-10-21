@@ -16,7 +16,13 @@ To run the demo scenarios, the following software needs to be installed:
         * *Podman (https://podman.io/)* - Podman is a utility, provided as part of the libpod library, that can be used to create, run and maintain containers. Installation instructions for different platforms are available at *https://podman.io/getting-started/installation*
 
 ## Application demo scenario
-Application code is provided in */app* subfolder and can be run by launching *app-run.sh* script, available in the repository root folder.
+The present GitHub repository provides all the code and configuration files needed to run and test the Restaurant Management application.
+
+1. Start a terminal in your environment
+2. Download the files with the following command **git clone https://github.com/robipozzi/container-kubernetes-tutorials.git**
+3. cd to **container-kubernetes-tutorials/1-container_basics**
+
+Application code is provided in */app* subfolder and can be run by launching *app-run.sh* script, available in the root folder.
 
 ### Running application as a Docker container
 A *Dockerfile* is provided to build and run the application as a Docker container. 
