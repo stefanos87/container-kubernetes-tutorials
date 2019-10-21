@@ -1,0 +1,41 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: restaurant-basic
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: restaurant
+      scope: demo
+      level: basic
+  template:
+    metadata:
+      labels:
+        app: restaurant
+        scope: demo
+        level: basic
+    spec:
+      containers:
+      - name: restaurant-demo-app
+        image: "robipozzi/rpozzi-restaurants:1.0"
+        resources: 
+          limits: 
+            memory: "500Mi"
+            cpu: "250m"
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: restaurant-basic-service
+spec:
+  selector:
+    app: restaurant
+    scope: demo
+    level: basic
+  type: NodePort
+  ports:
+  - protocol: "TCP"
+    port: 9990
+    targetPort: 8082
+    nodePort: 31114
