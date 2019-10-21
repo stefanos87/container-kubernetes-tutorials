@@ -12,18 +12,24 @@ Every Kubernetes and Red Hat OpenShift installation (either installed on-premise
 Please refer to the specific Cloud Provider documentation for instructions on how to instantiate, authenticate and operate with Kubernetes and/or Red Hat OpenShift environments provided.
 
 ### IBM Kubernetes Service
-[TODO]
+You can have access to a Kubernetes cluster installation on IBM Cloud, here following you will find the instructions to instantiate one:
 1. Access IBM Cloud at *https://cloud.ibm.com/*, if you do not have an account you can create one for free
 2. Go to Catalog and click *Containers* link in the menu on the left 
 ![](https://github.com/robipozzi/container-kubernetes-tutorials/blob/master/5-k8_basics/images/catalog.png)
 3. Click on Kubernetes Service tile and then click *Create* button
 ![](https://github.com/robipozzi/container-kubernetes-tutorials/blob/master/5-k8_basics/images/create-button.png)
-4. Select the Free plan (so that you will be able to experiment with full functional Kubernetes cluster at no charge for 1 month)
+4. Select the Free plan (you will be able to experiment with full functional Kubernetes cluster at no charge for 1 month), leave all the defaults and then click *Create cluster* button; this tutorial has been tested with version 1.14.7 
 ![](https://github.com/robipozzi/container-kubernetes-tutorials/blob/master/5-k8_basics/images/create-cluster.png)
-5. This tutorial has been tested with version 1.14.7 
-[TODO]
+5. Once the cluster has been created (it usually takes 10 minutes or more) go to *Access* section that will give you all the instructions to download, install and configure the command lines needed to interact with Kubernetes, together with instructions on how to connect and authenticate to your cluster
+![](https://github.com/robipozzi/container-kubernetes-tutorials/blob/master/5-k8_basics/images/cluster-access.png)
+6. Go to *Worker Nodes* section and take not of *Public IP*, you will need it to access the application, once deployed
+![](https://github.com/robipozzi/container-kubernetes-tutorials/blob/master/5-k8_basics/images/public-ip.png)
 
 ### Red Hat OpenShift
+You can have access to a Red Hat OpenShift cluster installation on IBM Bluedemos environment, here following you will find the instructions to instantiate one:
+1. Access IBM Bluedemos at *https://bluedemos.com/show/2459*, you will need an IBM id, if you do not have it you can create one for free by clicking the *Create and IBM id* link at the bottom of the page, as you can see in the following snapshot
+![](https://github.com/robipozzi/container-kubernetes-tutorials/blob/master/5-k8_basics/images/ibm-login.png)
+2. 
 [TODO]
 
 ## Application demo scenario
