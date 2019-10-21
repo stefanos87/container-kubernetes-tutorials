@@ -15,14 +15,19 @@ Please refer to the specific Cloud Provider documentation for instructions on ho
 You can have access to a Kubernetes cluster installation on IBM Cloud, here following you will find the instructions to instantiate one:
 1. Access IBM Cloud at *https://cloud.ibm.com/*, if you do not have an account you can create one for free
 2. Go to Catalog and click *Containers* link in the menu on the left 
+
 ![](https://github.com/robipozzi/container-kubernetes-tutorials/blob/master/5-k8_basics/images/catalog.png)
 3. Click on Kubernetes Service tile and then click *Create* button
+
 ![](https://github.com/robipozzi/container-kubernetes-tutorials/blob/master/5-k8_basics/images/create-button.png)
 4. Select the Free plan (you will be able to experiment with full functional Kubernetes cluster at no charge for 1 month), leave all the defaults and then click *Create cluster* button; this tutorial has been tested with version 1.14.7 
+
 ![](https://github.com/robipozzi/container-kubernetes-tutorials/blob/master/5-k8_basics/images/create-cluster.png)
 5. Once the cluster has been created (it usually takes 10 minutes or more) go to *Access* section that will give you all the instructions to download, install and configure the command lines needed to interact with Kubernetes
+
 ![](https://github.com/robipozzi/container-kubernetes-tutorials/blob/master/5-k8_basics/images/cluster-access.png)
 6. Go to *Worker Nodes* section and take not of *Public IP*, you will need it to access the application, once deployed
+
 ![](https://github.com/robipozzi/container-kubernetes-tutorials/blob/master/5-k8_basics/images/public-ip.png)
 
 #### IBM Kubernetes Service authentication
@@ -38,10 +43,13 @@ From now on you can use **kubectl** commands to interact with the cluster
 ### 1.2 Use Red Hat OpenShift (RHOCP)
 You can have access to a Red Hat OpenShift cluster installation on IBM Bluedemos environment, here following you will find the instructions to instantiate one:
 1. Access IBM Bluedemos at *https://bluedemos.com/show/2459*, you will need an IBM id, if you do not have it you can create one for free by clicking the *Create and IBM id* link at the bottom of the page, as you can see in the following snapshot
+
 ![](https://github.com/robipozzi/container-kubernetes-tutorials/blob/master/5-k8_basics/images/ibm-login.png)
 2. Instantiate the environment by clicking the *Reserve a demo* button (the environment can be booked for a maximum of 350 consecutive hours, then you will need to create another instance), you will receive an email with URL and password to access the environment once it will be ready
+
 ![](https://github.com/robipozzi/container-kubernetes-tutorials/blob/master/5-k8_basics/images/bluedemos.png)
 3. Once the environment is ready, access to it and start all the VMs by clicking the button as shown in the snapshot below
+
 ![](https://github.com/robipozzi/container-kubernetes-tutorials/blob/master/5-k8_basics/images/start.png)
 4. Once the VMs are all started, access the one named *Workstation* by just clicking on its tile.
 
@@ -64,19 +72,19 @@ Once the command has run successfully you can open a browser to **http://<PUBLIC
 
 The command above will create all the necessary Kubernetes objects in your cluster:
 
-#### Kubernetes Deployment
+### Kubernetes Deployment
 A Deployment is a Kubernetes object used to describe the characteristics and the desired state of an application component.
 Please refer to Kubernetes documentation *https://kubernetes.io/docs/concepts/workloads/controllers/deployment/* for more information and details.
 
 The *restaurant-app.yaml* provided in this repository defines the Deployment for Restaurant Management application:
-* A Deployment name **restaurant-basic**
+* The Deployment name **restaurant-basic**
 * The Desired State **replicas: 1**, meaning that just one instance of the Pod must be running at all time
 * The **matchLabels** section defines which Pods will be managed by this Deployment object, the labels must exactly match the ones defined in the **labels** array in *template:metadata* section 
 * The container image **robipozzi/rpozzi-restaurants:1.0** the container in the Pod will be instantiated from; the image will be pulled from Docker Hub
 
 ![](https://github.com/robipozzi/container-kubernetes-tutorials/blob/master/5-k8_basics/images/k8-deployment.png)
 
-#### Kubernetes Service
+### Kubernetes Service
 A Service is the abstraction through which Kubernetes manages the incoming requests, routing to the appropriate Pods; it manages this by labelling Pods and by using label selectors so that a Service knows to which Pods to route. 
 Please refer to Kubernetes documentation *https://kubernetes.io/docs/concepts/services-networking/service/* for more information.
 
@@ -85,7 +93,7 @@ There are different types of Service in Kubernetes:
 * NodePort - it exposes a port on every Worker Nodes in the cluster and allows for external communication
 
 The *restaurant-app.yaml* provided in this repository defines a NodePort type of Service for Restaurant Management application, exposing port 31114 on the Kubernetes cluster nodes:
-* A Service name **restaurant-basic-service**
+* The Service name **restaurant-basic-service**
 * The **selector** section must exactly match the labels defined in the **labels** array in *template:metadata* section of the Deployment in order for the requests to be routed to the right Pods
 * The type of Service, which is **NodePort**
 * The **port** defines the port through which the Service can be accessed by other Service, internally
@@ -94,12 +102,19 @@ The *restaurant-app.yaml* provided in this repository defines a NodePort type of
 
 ![](https://github.com/robipozzi/container-kubernetes-tutorials/blob/master/5-k8_basics/images/k8-service.png)
 
-#### Kubernetes Ingress
-An Ingress is a Kubernetes object that [TODO]
+### Kubernetes Ingress
+An Ingress is a Kubernetes object that manages external access to the services in a cluster, typically HTTP/HTTPS. Ingress exposes HTTP and HTTPS routes from outside the cluster to services within the cluster, traffic routing is controlled by rules defined on the Ingress resource.
 Please refer to Kubernetes documentation *https://kubernetes.io/docs/concepts/services-networking/ingress/* for more information.
 
-The *restaurant-app.yaml* provided in this repository has a section
-[TODO]
+The *restaurant-app.yaml* provided in this repository defines an Ingress for Restaurant Management 
+* The Ingress name **restaurant-basic-ingress**
+* The path **/restaurant** to which the Ingress responds
+* **serviceName** defines which Service the Ingress should route to, the value must match the Service name as defined before(in our case, **restaurant-basic-service**)
+* **servicePort** defines which port the Service shoud be contacted on, the value must match the **port** as defined before (in our case **9990**)
+
+![](https://github.com/robipozzi/container-kubernetes-tutorials/blob/master/5-k8_basics/images/k8-ingress.png)
+
+**WARNING**: the IBM Kubernetes Service has a limitation and does not support Ingress, nontheless the configuration has been provided for reference
 
 ### 2.2 Deploy and run application on Red Hat OpenShift
 [TODO]
@@ -107,9 +122,10 @@ The *restaurant-app.yaml* provided in this repository has a section
 #### Red Hat OpenShift Route
 [TODO]
 
-## 3. Automation scripts available
-A *restaurant-app.yaml* is provided to deploy and run the application as a container; plain standard OCI compliant commands (either Docker or Buildah/Podman) can be used to build the container image, push the container image to Docker Hub repository and run it as a container, the following scripts are provided for convenience:
+## 3. Automation scripts available for IBM Kubernetes Service
+A *restaurant-app.yaml* file is provided to deploy and run the application on IKS cluster and the following scripts are available  
+* *deploy.sh* - it can be launched to deploy the application by creating all the needed Kubernetes object
+* *delete.sh* - it can be launched to undeploy the application by deleting all the Kubernetes object 
 
-### 3.1 IBM Kubernetes Service
-* *deploy.sh* - it can be launched to build the Docker image; the script removes the Docker image from the local registry and re-builds it.
-* *delete.sh* - it can be launched to run Docker container locally with no Docker volumes attached.
+## 4. Automation scripts available for Red Hat OpenShift
+[TODO]
