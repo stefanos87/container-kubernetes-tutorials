@@ -11,7 +11,7 @@ To follow the instructions in this tutorial you will need either a Kubernetes an
 Every Kubernetes and Red Hat OpenShift installation (either installed on-premises or instantiated on a Cloud Provider) should work but have not been tested during the development of this tutorial. 
 Please refer to the specific Cloud Provider documentation for instructions on how to instantiate, authenticate and operate with Kubernetes and/or Red Hat OpenShift environments provided.
 
-### IBM Kubernetes Service
+### Use IBM Kubernetes Service
 You can have access to a Kubernetes cluster installation on IBM Cloud, here following you will find the instructions to instantiate one:
 1. Access IBM Cloud at *https://cloud.ibm.com/*, if you do not have an account you can create one for free
 2. Go to Catalog and click *Containers* link in the menu on the left 
@@ -25,12 +25,17 @@ You can have access to a Kubernetes cluster installation on IBM Cloud, here foll
 6. Go to *Worker Nodes* section and take not of *Public IP*, you will need it to access the application, once deployed
 ![](https://github.com/robipozzi/container-kubernetes-tutorials/blob/master/5-k8_basics/images/public-ip.png)
 
-### Red Hat OpenShift
+### Use Red Hat OpenShift
 You can have access to a Red Hat OpenShift cluster installation on IBM Bluedemos environment, here following you will find the instructions to instantiate one:
 1. Access IBM Bluedemos at *https://bluedemos.com/show/2459*, you will need an IBM id, if you do not have it you can create one for free by clicking the *Create and IBM id* link at the bottom of the page, as you can see in the following snapshot
 ![](https://github.com/robipozzi/container-kubernetes-tutorials/blob/master/5-k8_basics/images/ibm-login.png)
-2. 
-[TODO]
+2. Instantiate the environment by clicking the *Reserve a demo* button (the environment can be booked for a maximum of 350 consecutive hours, then you will need to create another instance), you will receive an email with URL and password to access the environment once it will be ready
+![](https://github.com/robipozzi/container-kubernetes-tutorials/blob/master/5-k8_basics/images/bluedemos.png)
+3. Once the environment is ready, access to it and start all the VMs by clicking the button as shown in the snapshot below
+![](https://github.com/robipozzi/container-kubernetes-tutorials/blob/master/5-k8_basics/images/start.png)
+4. Once the VMs are all started, access the one named *Workstation* by just clicking on its tile.
+
+All usernames and passwords that you will eventually need to work within the environment are available in *Lab01 Guide* that you can find in *https://bluedemos.com/show/2459* Home Page.
 
 ## Application demo scenario
 [TODO]
