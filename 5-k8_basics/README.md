@@ -82,7 +82,7 @@ Once you have authenticated to Kubernetes cluster, as described in the *IBM Kube
 
 **kubectl apply -f restaurant-app.yaml**
 
-Once the command has run successfully you can open a browser to **http://<PUBLIC_IP>:31114** url and test the application, where <PUBLIC_IP> is the Public IP Address of your Kubernetes cluster, that you wrote down before.
+Once the command has run successfully you can open a browser to **http://<PUBLIC_IP>:31114** url and test the application, where <PUBLIC_IP> is the Public IP Address of your Kubernetes cluster, that you wrote down before. If you do not know <PUBLIC_IP> of your cluster, just issue the command **kubectl get node -o wide** and take note of EXTERNAL-IP.
 
 The command above will create all the necessary Kubernetes objects in your cluster:
 

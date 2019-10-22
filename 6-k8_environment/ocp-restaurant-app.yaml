@@ -1,0 +1,44 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: restaurant-env
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: restaurant
+      scope: demo
+      level: environment
+  template:
+    metadata:
+      labels:
+        app: restaurant
+        scope: demo
+        level: environment
+    spec:
+      containers:
+      - name: restaurant-demo-app
+        image: "robipozzi/rpozzi-restaurants:1.1"
+        env: 
+        - name: UPLOAD_DIR 
+          value: /tmp/upload
+        resources: 
+          limits: 
+            memory: "500Mi"
+            cpu: "250m"
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: restaurant-env-service
+spec:
+  selector:
+    app: restaurant
+    scope: demo
+    level: environment
+  type: NodePort
+  ports:
+  - protocol: "TCP"
+    port: 9991
+    targetPort: 8082
+    nodePort: 31115
