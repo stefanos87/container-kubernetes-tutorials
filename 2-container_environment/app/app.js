@@ -1,10 +1,7 @@
 // Add required modules
 var express = require('express');
 var timeout = require('connect-timeout');
-const log4js = require('log4js');
-const appName = require('./package').name;
-const logger = log4js.getLogger(appName);
-logger.level = require('./package').loggerLevel;
+var logger = require('./utils/logger');
 // Initialize application
 var app = express();
 app.use(express.static(process.cwd() + '/public'));
@@ -19,8 +16,19 @@ require("./routers/restaurant")(app, logger);
 require("./routers/fileManager")(app, logger);
 // Run server
 app.listen(PORT, function() {
-	logger.info("Current working directory = " + process.cwd());
-	logger.info("Upload directory from UPLOAD_DIR environment variable = " + process.env.UPLOAD_DIR);
+	var propertyReader = require('./utils/propertyReader');
+	try {
+		var useDb = propertyReader.getProperty('use.db');
+		logger.info("use.db = " + useDb);
+		if (useDb) {
+			logger.info("DB Type = " + propertyReader.getProperty('db.type'));
+			logger.info("DB Url = " + propertyReader.getProperty('db.url'));
+			logger.info("DB Username = " + propertyReader.getProperty('db.username'));
+			logger.info("DB Password = " + propertyReader.getProperty('db.password'));
+		}
+	} catch (error) {
+		logger.error("Not able to read 'use.db' property");
+	}
 	logger.info("Application is listening on port " + (process.env.EXPOSED_PORT || PORT));
 });
 // ############ Common Functions

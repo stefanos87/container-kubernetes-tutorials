@@ -1,7 +1,4 @@
-const log4js = require('log4js');
-const appName = require('../package').name;
-const logger = log4js.getLogger(appName);
-logger.level = require('../package').loggerLevel;
+var logger = require('../utils/logger');
 
 function getRestaurants(callback) {
 	logger.info("RestaurantService.getRestaurants called");
