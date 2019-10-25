@@ -3,7 +3,7 @@ This tutorial provides the container image and the relative yaml configuration t
 
 The tutorial builds on previous container tutorial and uses **robipozzi/rpozzi-restaurants:1.0** container image, which has been built in ![Container basics tutorial](https://github.com/robipozzi/container-kubernetes-tutorials/tree/master/1-container_basics); the container image is available in Docker Hub (*https://hub.docker.com/*) publicly accessible registry (see *https://hub.docker.com/r/robipozzi/rpozzi-restaurants/tags*).
 
-## 1 Prerequisites
+## Prerequisites
 To follow the instructions in this tutorial you will need either a Kubernetes and/or a Red Hat OpenShift installation; this tutorial has been developed and tested on the following two environments, for which detailed instructions on how to instantiate and operate with are provided:
 * *IBM Kubernetes Service* - IBM Cloud (*https://cloud.ibm.com/*) provides a managed Kubernetes service, with a free cluster tier available.
 * *Red Hat OpenShift* on IBM Bluedemos environment - IBM provides a free demo environment, available at the following URL  *https://bluedemos.com/show/2459* where a full functional Red Hat OpenShift 3.11 installation can be used for demo and test purposes.
@@ -11,7 +11,7 @@ To follow the instructions in this tutorial you will need either a Kubernetes an
 Every Kubernetes and Red Hat OpenShift installation (either installed on-premises or instantiated on a Cloud Provider) should work but have not been tested during the development of this tutorial. 
 Please refer to the specific Cloud Provider documentation for instructions on how to instantiate, authenticate and operate with Kubernetes and/or Red Hat OpenShift environments provided.
 
-### 1.1 Use IBM Kubernetes Service (IKS)
+### 1 Use IBM Kubernetes Service (IKS)
 You can have access to a Kubernetes cluster installation on IBM Cloud, here following you will find the instructions to instantiate one:
 1. Access IBM Cloud at *https://cloud.ibm.com/*, if you do not have an account you can create one for free
 2. Go to Catalog and click *Containers* link in the menu on the left 
@@ -34,7 +34,7 @@ You can have access to a Kubernetes cluster installation on IBM Cloud, here foll
 
 ![](https://github.com/robipozzi/container-kubernetes-tutorials/blob/master/5-k8_basics/images/public-ip.png)
 
-#### IBM Kubernetes Service authentication
+#### 1.1 IBM Kubernetes Service authentication
 The *Access* section of your cluster describes how to connect and authenticate to your cluster; you basically need to:
 1. Start a terminal and authenticate to IBM Cloud with the following **ibmcloud login -a cloud.ibm.com -r <YOUR_CLUSTER_REGION> -g <YOUR_CLUSTER_GROUP>**
 2. Authenticate to the Kubernetes cluster with the following **ibmcloud ks cluster config --cluster <YOUR_CLUSTER_ID>**
@@ -44,7 +44,7 @@ The specific commands, with the correct values for your cluster are in the *Acce
 
 From now on you can use **kubectl** commands to interact with the cluster.
 
-### 1.2 Use Red Hat OpenShift (RHOCP)
+### 2 Use Red Hat OpenShift (RHOCP)
 You can have access to a Red Hat OpenShift cluster installation on IBM Bluedemos environment, here following you will find the instructions to instantiate one:
 1. Access IBM Bluedemos at *https://bluedemos.com/show/2459*, you will need an IBM id, if you do not have it you can create one for free by clicking the *Create and IBM id* link at the bottom of the page, as you can see in the following snapshot
 
@@ -62,20 +62,20 @@ You can have access to a Red Hat OpenShift cluster installation on IBM Bluedemos
 
 All usernames and passwords that you will eventually need to work within the environment are available in *Lab01 Guide* that you can find in *https://bluedemos.com/show/2459* Home Page.
 
-#### Red Hat OpenShift authentication
+#### 2.1 Red Hat OpenShift authentication
 1. Open a Terminal and login to OpenShift cluster with the command **oc login -u admin -p Passw0rd!**
 2. Switch to *demo* namespace (which, in OpenShift terms, is a *project*) with the command **oc project demo**
 
 From now on you can use either **oc** or **kubectl** commands to interact with the OpenShift cluster.
 
-## 2. Application demo scenario
+## 3 Application demo scenario
 The present GitHub repository provides all the configuration files and scripts needed to deploy and test the Restaurant Management application to Kubernetes, in the version previously developed in ![Container basics tutorial](https://github.com/robipozzi/container-kubernetes-tutorials/tree/master/1-container_basics).
 
 1. Start a terminal in your environment
 2. Download the files with the following command **git clone https://github.com/robipozzi/container-kubernetes-tutorials.git**
 3. cd to **container-kubernetes-tutorials/5-k8_basics**
 
-### 2.1 Deploy and run application on IBM Kubernetes Service
+### 3.1 Deploy and run application on IBM Kubernetes Service
 The *restaurant-app.yaml* file, provided in this repository, defines all the configurations needed to deploy and run the application in Kubernetes cluster.
 
 Once you have authenticated to Kubernetes cluster, as described in the *IBM Kubernetes Service authentication* section, you can just issue the following command
@@ -130,7 +130,7 @@ The *restaurant-app.yaml* provided in this repository defines an Ingress for Res
 
 **WARNING**: the IBM Kubernetes Service has a limitation and does not support Ingress, nontheless the configuration has been provided for reference
 
-### 2.2 Deploy and run application on Red Hat OpenShift
+### 3.2 Deploy and run application on Red Hat OpenShift
 The *ocp-restaurant-app.yaml* file, provided in this repository, defines all the configurations needed to deploy and run the application in OpenShift cluster.
 
 Once you have authenticated to OpenShift cluster, as described in the *Red Hat OpenShift authentication* section, you can just issue the following command
@@ -166,12 +166,12 @@ Once the command has run successfully, open a browser and do the following:
 An OpenShift route is a way to expose a service by giving it an externally-reachable hostname.
 Please refer to OpenShift documentation *https://docs.openshift.com/enterprise/3.0/architecture/core_concepts/routes.html* for more detailed information.
 
-## 3. Automation scripts available for IBM Kubernetes Service
+## 4 Automation scripts available for IBM Kubernetes Service
 A *restaurant-app.yaml* file is provided to deploy and run the application on IKS cluster and the following scripts are available:
 * *deploy.sh* - it can be launched to deploy the application by creating all the needed Kubernetes object
 * *delete.sh* - it can be launched to undeploy the application by deleting all the Kubernetes object
 
-## 4. Automation scripts available for Red Hat OpenShift
+## 5 Automation scripts available for Red Hat OpenShift
 A *ocp-restaurant-app.yaml* file is provided to deploy and run the application on OpenShift cluster and the following scripts are available:
 * *ocp-deploy.sh* - it can be launched to deploy the application by creating all the needed OpenShift object
 * *ocp-delete.sh* - it can be launched to undeploy the application by deleting all the OpenShift object
