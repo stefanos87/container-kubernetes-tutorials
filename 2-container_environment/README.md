@@ -9,7 +9,7 @@ It builds on ![Container basics tutorial](https://github.com/robipozzi/container
 ## Prerequisites
 Prerequisites are described in ![Container basics tutorial - Prerequisites](https://github.com/robipozzi/container-kubernetes-tutorials/tree/master/1-container_basics#Prerequisites) paragraph.
 
-## 1 Application demo scenario
+## 1. Application demo scenario
 The present GitHub repository provides all the code and configuration files needed to run and test the Restaurant Management application. The application code is provided in */app* subfolder.
 
 1. Start a terminal in your environment
@@ -31,7 +31,7 @@ The application requires 2 environment variables, as it can be seen in the follo
 
 The *app-run.sh* script, available in the repository root folder, is provided to automate application launch with the appropriate configuration.
 
-### 1.1 Running application as a Docker container
+### 1.1. Running application as a Docker container
 A *Dockerfile* is provided to build and run the application as a Docker container. 
 First you need to build the container image by running the *docker build* command as follows:
 
@@ -51,7 +51,7 @@ Once the Docker container is started, launch *http://localhost:8083/dir* endpoin
 
 You can restart Docker container by changing *<YOUR_UPLOAD_DIR>* in *-e UPLOAD_DIR=<YOUR_UPLOAD_DIR>* and see how environment variable change affects the application.
 
-### 1.2 Running application as a cri-o container
+### 1.2. Running application as a cri-o container
 The same *Dockerfile* can be used to build and run the application as a cri-o container. 
 First you need to build the container image by running the *buildah bud* command as follows:
 
@@ -63,17 +63,17 @@ Once the container image is built, it can be run with the standard *podman run* 
 
 As it can be seen, the same exact construct used with Docker can be applied by using Buildah and Podman.
 
-## 2 Automation scripts available
+## 2. Automation scripts available
 A *Dockerfile* is provided to build and run the application as a container; plain standard OCI compliant commands (either Docker or Buildah/Podman) can be used to build the container image, push the container image to Docker Hub repository and run it as a container, the following scripts are provided for convenience:
 
-### 2.1 Docker
+### 2.1. Docker
 * *docker-build.sh* - it can be launched to build the Docker image; the script removes the Docker image from the local registry and re-builds it.
 * *docker-run.sh* - it can be launched to run Docker container locally; the script removes running container and runs a fresh container instance.
 * *docker-push.sh* - it can be launched to push the Docker image to Docker Hub. You will need to modify *$CONTAINER_IMAGE_NAME* parameter in *setenv-docker.sh* appropriately to push to the correct Docker Hub repository.
 
 All the relevant parameters are externalized and can be changed in *setenv-docker.sh* script.
 
-### 2.2 Buildah / Podman
+### 2.2. Buildah / Podman
 * *container-build.sh* - it can be launched to build the container image using Buildah utility; the script removes the container image from the local registry and re-builds it.
 * *container-run.sh* - it can be launched to run container locally using Podman utility; the script removes running container and runs a fresh container instance.
 * *container-push.sh* - it can be launched to push the container image to Docker Hub. You will need to modify *$CONTAINER_IMAGE_NAME* parameter in *setenv.sh* appropriately to push to the correct Docker Hub repository.

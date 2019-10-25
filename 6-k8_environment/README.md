@@ -13,7 +13,7 @@ The present GitHub repository provides all the configuration files and scripts n
 2. If you havent't done already, download the files with the following command **git clone https://github.com/robipozzi/container-kubernetes-tutorials.git**
 3. cd to **container-kubernetes-tutorials/6-k8_environment** 
 
-### 2.1 Deploy and run application on IBM Kubernetes Service
+### 2.1. Deploy and run application on IBM Kubernetes Service
 The *restaurant-app.yaml* file, provided in this repository, defines all the configurations needed to deploy and run the application in Kubernetes cluster.
 
 Once you have authenticated to Kubernetes cluster, as described in the *IBM Kubernetes Service authentication* section, you can just issue the following command
@@ -69,7 +69,7 @@ The *restaurant-app.yaml* provided in this repository defines an Ingress for Res
 
 **WARNING**: the IBM Kubernetes Service has a limitation and does not support Ingress, nontheless the configuration has been provided for reference
 
-### 2.2 Deploy and run application on Red Hat OpenShift
+### 2.2. Deploy and run application on Red Hat OpenShift
 The *ocp-restaurant-app.yaml* file, provided in this repository, defines all the configurations needed to deploy and run the application in OpenShift cluster.
 
 Once you have authenticated to OpenShift cluster, as described in the *Red Hat OpenShift authentication* section, you can just issue the following command
