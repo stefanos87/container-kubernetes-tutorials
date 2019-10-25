@@ -3,10 +3,10 @@ This tutorial provides the container image and the relative yaml configuration t
 
 The tutorial builds on previous container tutorial and uses **robipozzi/rpozzi-restaurants:1.1** container image, which has been built in ![Container environment variables tutorial](https://github.com/robipozzi/container-kubernetes-tutorials/tree/master/2-container_environment); the container image is available in Docker Hub (*https://hub.docker.com/*) publicly accessible registry (see *https://hub.docker.com/r/robipozzi/rpozzi-restaurants/tags*).
 
-## Prerequisites
+## 1. Prerequisites
 Prerequisites for the execution of this tutorial are described in ![Kubernetes basics tutorial - Prerequisites](https://github.com/robipozzi/container-kubernetes-tutorials/tree/master/5-k8_basics#Prerequisites) paragraph.
 
-## Application demo scenario
+## 2. Application demo scenario
 [TODO]
 
 ### Kubernetes ConfigMap
@@ -15,14 +15,14 @@ Prerequisites for the execution of this tutorial are described in ![Kubernetes b
 ### Kubernetes Secret
 [TODO]
 
-### Deploy and run application on IBM Kubernetes Service
+### 2.1. Deploy and run application on IBM Kubernetes Service
 A *restaurant-app.yaml* is provided to build and run the application as a Docker container. 
 First you need to build the container image by running the *docker build* command as follows:
 
-### Deploy and run application on Red Hat OpenShift
+### 2.2. Deploy and run application on Red Hat OpenShift
 [TODO]
 
-## Automation scripts available
+## 3. Automation scripts available
 A *restaurant-app.yaml* is provided to deplo and run the application as a container; plain standard OCI compliant commands (either Docker or Buildah/Podman) can be used to build the container image, push the container image to Docker Hub repository and run it as a container, the following scripts are provided for convenience:
 
 ### IBM Kubernetes Service
