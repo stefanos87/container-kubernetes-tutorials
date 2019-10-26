@@ -32,6 +32,9 @@ export class HomeComponent implements OnInit {
       case '/dir':
         this.uploadManagerService.getUploadDir().subscribe(response => this.processResponse(response));
         break;
+      case '/config':
+        this.uploadManagerService.getConfigurationProperties().subscribe(response => this.processResponse(response));
+        break;
       case '/list':
         this.uploadManagerService.getFiles().subscribe(response => this.processFileListResponse(response));
         break;

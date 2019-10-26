@@ -7,6 +7,7 @@ The tutorial builds on previous ![Container environment variables tutorial](http
 * */healthz* endpoint - it returns a string, testing that the application is up and healthy
 * */restaurants* endpoint - it returns a list of restaurants in Json format
 * */dir* endpoint - it calls an endpoint that shows the upload directory, as defined by UPLOAD_DIR environment variable which has been injected in the application environment
+* */config* endpoint - it calls an endpoint that shows the configuration properties, as defined in *config.properties* configuration file, available in *config* subfolder
 * */upload* endpoint - it allows to select files from the local filesystem and upload them to *<UPLOAD_DIR>* folder
 * */list* endpoint - it calls an endpoint that shows all the files in *<UPLOAD_DIR>* folder
 * */delete* endpoint - it calls an endpoint that deletes all the files in *<UPLOAD_DIR>* folder

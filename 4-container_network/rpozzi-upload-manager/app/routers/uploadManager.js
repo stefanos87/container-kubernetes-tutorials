@@ -25,6 +25,16 @@ module.exports = function(app, logger) {
         logger.info(msg);
         res.json({ response : msg });
     });
+    app.get('/config', function (req, res) {
+        logger.info("/config endpoint called");
+        var response = '<html><head><meta charset="utf-8"><title>Restaurants</title><meta name="description" content=""><meta name="viewport" content="width=device-width, initial-scale=1"></head>';
+        response += '<body><h3>Configuration properties are: </h3>';
+
+        // TODO
+        
+        response += '</body></html>';
+        res.send(response);
+    });
     app.post('/upload', upload.array('fileToUpload'), function(req, res) {
         logger.info("/upload endpoint called");
         const files = req.files;

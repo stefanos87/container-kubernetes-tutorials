@@ -5,6 +5,7 @@ It builds on ![Container basics tutorial](https://github.com/robipozzi/container
 * */healthz* endpoint - it returns a string, testing that the application is up and healthy
 * */restaurants* endpoint - it returns a list of restaurants in Json format
 * */dir* endpoint - it calls an endpoint that shows the upload directory, as defined by UPLOAD_DIR environment variable which has been injected in the application environment
+* */config* endpoint - it calls an endpoint that shows the configuration properties, as defined in *config.properties* configuration file, available in *config* subfolder
 
 ## Prerequisites
 Prerequisites are described in ![Container basics tutorial - Prerequisites](https://github.com/robipozzi/container-kubernetes-tutorials/tree/master/1-container_basics#Prerequisites) paragraph.

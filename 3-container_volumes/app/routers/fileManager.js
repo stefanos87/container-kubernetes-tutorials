@@ -1,6 +1,7 @@
 // Add required modules
 var fs = require('fs-extra');
 var multer = require('multer');
+var propertyReader = require('../utils/propertyReader');
 // Read environment variables
 var uploadDir = process.env.UPLOAD_DIR;
 // Setup multipart upload configuration
@@ -23,6 +24,17 @@ module.exports = function(app, logger) {
         response += '</body></html>';
         res.send(response);
     });
+    app.get('/config', function (req, res) {
+        logger.info("/config endpoint called");
+        var response = '<html><head><meta charset="utf-8"><title>Restaurants</title><meta name="description" content=""><meta name="viewport" content="width=device-width, initial-scale=1"></head>';
+        response += '<body><h3>Configuration properties are: </h3>';
+        var properties = propertyReader.getProperties();
+        properties.forEach(element => {          
+            response += '<br><i>' + element[0] + " = " + element[1] + '</i>';
+        });
+        response += '</body></html>';
+        res.send(response);
+    });
     app.post('/upload', upload.array('fileToUpload'), function(req, res) {
         logger.info("/upload endpoint called");
         const files = req.files;
@@ -37,7 +49,6 @@ module.exports = function(app, logger) {
             response += '</body></html>';
             var uploadStatus = 'File Uploaded Successfully';
             res.send(response);
-
         } else {
             logger.info('No File Uploaded');
             var fileName = 'File not uploaded';

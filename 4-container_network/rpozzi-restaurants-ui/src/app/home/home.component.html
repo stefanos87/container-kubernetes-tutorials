@@ -10,7 +10,10 @@
     </nav>
   </li>
   <li (click)="onclick('/dir')">
-    <span class="badge">/dir</span> ==> show configured upload directory
+    <span class="badge">/dir</span> ==> show upload directory (read from environment variable)
+  </li>
+  <li (click)="onclick('/config')">
+    <span class="badge">/dir</span> ==> show configuration properties (read from configuration properties file)
   </li>
   <li>
     <span class="badge">/upload</span> ==> Upload file to upload directory

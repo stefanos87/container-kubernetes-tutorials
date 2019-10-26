@@ -1,5 +1,5 @@
-# Kubernetes environment variables tutorial
-This tutorial provides the container image and the relative yaml configuration to deploy an application to Kubernetes (https://kubernetes.io/) and explore how environment variables can be used to externalize configurations.
+# Kubernetes environment variables, ConfigMap and Secret tutorial
+This tutorial provides the container image and the relative yaml configuration to deploy an application to Kubernetes (https://kubernetes.io/) and explore how environment variables and usage of Kubernetes object such as ConfigMap and Secret  can be used to externalize configurations.
 
 The tutorial builds on previous container tutorial and uses **robipozzi/rpozzi-restaurants:1.1** container image, which has been built in ![Container environment variables tutorial](https://github.com/robipozzi/container-kubernetes-tutorials/tree/master/2-container_environment); the container image is available in Docker Hub (*https://hub.docker.com/*) publicly accessible registry (see *https://hub.docker.com/r/robipozzi/rpozzi-restaurants/tags*).
 
@@ -68,6 +68,12 @@ The *restaurant-app.yaml* provided in this repository defines an Ingress for Res
 [TODO] <image placeholder>
 
 **WARNING**: the IBM Kubernetes Service has a limitation and does not support Ingress, nontheless the configuration has been provided for reference
+
+### Kubernetes ConfigMap
+[TODO]
+
+### Kubernetes Secret
+[TODO]
 
 ### 2.2. Deploy and run application on Red Hat OpenShift
 The *ocp-restaurant-app.yaml* file, provided in this repository, defines all the configurations needed to deploy and run the application in OpenShift cluster.

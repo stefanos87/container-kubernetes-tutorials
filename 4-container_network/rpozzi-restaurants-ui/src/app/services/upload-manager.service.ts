@@ -11,6 +11,7 @@ import { environment } from '../../environments/environment';
 export class UploadManagerService {
   private uploadManagerServiceUrl = environment.uploadMgrApiEndpoint;
   private uploadDirApi: String = '/dir';
+  private configPropertiesApi: String = '/config';
   private uploadApi: String = '/upload';
   private fileListApi: String = '/list';
   private deleteFilesApi: String = '/delete';
@@ -26,6 +27,15 @@ export class UploadManagerService {
 
   getUploadDir(): Observable<string> {
     const apiEndpoint: string = this.uploadManagerServiceUrl + this.uploadDirApi;
+    console.log('Calling api @ ' + apiEndpoint + ' ...');
+    return this.http.get<string>(apiEndpoint, this.httpOptions)
+      .pipe(
+        tap(_ => console.log('API ' + apiEndpoint + ' called, returning ...')),
+        catchError(this.errorService.handleError<string>('getUploadDir()', String())));
+  }
+
+  getConfigurationProperties(): Observable<string> {
+    const apiEndpoint: string = this.uploadManagerServiceUrl + this.configPropertiesApi;
     console.log('Calling api @ ' + apiEndpoint + ' ...');
     return this.http.get<string>(apiEndpoint, this.httpOptions)
       .pipe(

@@ -10,5 +10,4 @@ Following is the list of tutorials:
 4. ![Containers tutorial for networking](https://github.com/robipozzi/container-kubernetes-tutorials/tree/master/4-container_network)
 5. ![Kubernetes basics tutorial](https://github.com/robipozzi/container-kubernetes-tutorials/tree/master/5-k8_basics)
 6. ![Kubernetes tutorial for Environment Variables](https://github.com/robipozzi/container-kubernetes-tutorials/tree/master/6-k8_environment)
-7. ![Kubernetes tutorial for ConfigurationMaps and Secrets](https://github.com/robipozzi/container-kubernetes-tutorials/tree/master/7-k8_configuration)
-8. [TODO] Kubernetes tutorial for PersistentVolumes
+7. [TODO] Kubernetes tutorial for PersistentVolumes

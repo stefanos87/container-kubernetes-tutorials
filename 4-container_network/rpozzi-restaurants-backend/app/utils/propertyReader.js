@@ -13,6 +13,10 @@ var properties;
 // Functions
 function getProperty(key) {
 	return properties.get(key);
-}	
+}
+function getProperties() {
+	return properties;
+}
 
 exports.getProperty = getProperty;
+exports.getProperties = getProperties;

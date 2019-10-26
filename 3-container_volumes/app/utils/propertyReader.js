@@ -11,14 +11,20 @@ if (process.env.CONFIG_DIR == undefined) {
 	logger.info("Configuration files directory from CONFIG_DIR environment variable = " + configDir);
 }
 var properties;
+var propertiesArray;
 try {
 	properties = propertiesReader(configDir + '/config.properties');
+	propertiesArray = Object.entries(properties._properties);
 } catch (error) {
 	logger.error("Not able to read from " + configDir + "/config.properties - check whether the file exists");
 }
 // Functions
 function getProperty(key) {
 	return properties.get(key);
-}	
+}
+function getProperties() {
+	return propertiesArray;
+}
 
 exports.getProperty = getProperty;
+exports.getProperties = getProperties;
