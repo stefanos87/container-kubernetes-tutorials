@@ -1,0 +1,75 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: restaurant-pv
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: restaurant
+      scope: demo
+      level: pv
+  template:
+    metadata:
+      labels:
+        app: restaurant
+        scope: demo
+        level: pv
+    spec:
+      containers:
+      - name: restaurant-demo-app
+        image: "robipozzi/rpozzi-restaurants:1.2"
+        imagePullPolicy: Always
+        env: 
+        - name: UPLOAD_DIR 
+          valueFrom:  
+            configMapKeyRef: 
+              name: restaurant-configmap
+              key: upload_directory
+        - name: CONFIG_DIR 
+          valueFrom:  
+            configMapKeyRef: 
+              name: restaurant-configmap
+              key: configuration_directory
+        volumeMounts:
+          - name:  config-vol
+            mountPath:  /config
+        resources: 
+          limits: 
+            memory: "500Mi"
+            cpu: "250m"
+      volumes:
+        - name:  config-vol
+          configMap:
+            name: restaurant-configmap
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: restaurant-pv-service
+spec:
+  selector:
+    app: restaurant
+    scope: demo
+    level: pv
+  type: NodePort
+  ports:
+  - protocol: "TCP"
+    port: 9992
+    targetPort: 8082
+    nodePort: 31116
+---
+kind: Ingress
+apiVersion: extensions/v1beta1
+metadata:
+  name: restaurant-pv-ingress
+  annotations:
+    ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /restaurant
+        backend:
+          serviceName: restaurant-pv-service
+          servicePort: 9992

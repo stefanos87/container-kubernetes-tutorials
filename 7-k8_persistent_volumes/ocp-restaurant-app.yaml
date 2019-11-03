@@ -1,0 +1,60 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: restaurant-config
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: restaurant
+      scope: demo
+      level: configuration
+  template:
+    metadata:
+      labels:
+        app: restaurant
+        scope: demo
+        level: configuration
+    spec:
+      containers:
+      - name: restaurant-demo-app
+        image: "robipozzi/rpozzi-restaurants:1.1"
+        imagePullPolicy: Always
+        env: 
+        - name: UPLOAD_DIR 
+          valueFrom:  
+            configMapKeyRef: 
+              name: restaurant-configmap
+              key: upload_directory
+        - name: CONFIG_DIR 
+          valueFrom:  
+            configMapKeyRef: 
+              name: restaurant-configmap
+              key: configuration_directory
+        volumeMounts:
+          - name:  config-vol
+            mountPath:  /config
+        resources: 
+          limits: 
+            memory: "500Mi"
+            cpu: "250m"
+      volumes:
+        - name:  config-vol
+          configMap:
+            name: restaurant-configmap
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: restaurant-config-service
+spec:
+  selector:
+    app: restaurant
+    scope: demo
+    level: configuration
+  type: NodePort
+  ports:
+  - protocol: "TCP"
+    port: 9991
+    targetPort: 8082
+    nodePort: 31115
