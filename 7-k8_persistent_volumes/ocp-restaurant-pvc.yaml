@@ -4,7 +4,7 @@ metadata:
   name: upload-dir-pvc
   namespace: default
 spec:
-  storageClassName: nfs
+  storageClassName: managed-nfs-storage
   accessModes:
     - ReadWriteOnce
   resources:

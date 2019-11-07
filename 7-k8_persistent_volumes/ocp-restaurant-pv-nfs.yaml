@@ -4,7 +4,7 @@ metadata:
   name: restaurant-nfs-pv
   namespace: default
 spec:
-  storageClassName: nfs
+  storageClassName: managed-nfs-storage
   capacity:
     storage: 10Mi
   accessModes:
