@@ -32,6 +32,11 @@ spec:
             configMapKeyRef: 
               name: restaurant-configmap
               key: configuration_directory
+        - name: KEYSTORE_PASSWORD 
+          valueFrom:  
+            secretKeyRef: 
+              name: restaurant-secret
+              key: keystore.password
         volumeMounts:
           - name:  config-vol
             mountPath:  /config

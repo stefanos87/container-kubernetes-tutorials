@@ -18,6 +18,14 @@ require("./routers/fileManager")(app, logger);
 app.listen(PORT, function() {
 	var propertyReader = require('./utils/propertyReader');
 	try {
+		// START - KEYSTORE_PASSWORD
+		var keystorePassword = process.env.KEYSTORE_PASSWORD;
+		if (keystorePassword == undefined) {
+			logger.info("No KEYSTORE_PASSWORD environment variable has been defined");
+		} else {
+			logger.info("KEYSTORE_PASSWORD environment variable is set to = " + keystorePassword);
+		}
+		// END - KEYSTORE_PASSWORD
 		var useDb = propertyReader.getProperty('use.db');
 		logger.info("use.db = " + useDb);
 		if (useDb) {

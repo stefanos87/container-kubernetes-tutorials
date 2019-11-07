@@ -20,6 +20,8 @@ module.exports = function(app, logger) {
         properties.forEach(element => {          
             response += '<br><i>' + element[0] + " = " + element[1] + '</i>';
         });
+        response += '<br>';
+        response += '<br><i>KeyStore Password = ' + process.env.KEYSTORE_PASSWORD + '</i>';
         response += '</body></html>';
         res.send(response);
     });
