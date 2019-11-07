@@ -40,6 +40,8 @@ spec:
         volumeMounts:
           - name:  config-vol
             mountPath:  /config
+          - name:  upload-vol
+            mountPath:  /tmp/upload
         resources: 
           limits: 
             memory: "500Mi"
@@ -48,6 +50,9 @@ spec:
         - name:  config-vol
           configMap:
             name: restaurant-configmap
+        - name:  upload-vol
+          persistentVolumeClaim:
+            name: upload-dir-pvc
 ---
 kind: Service
 apiVersion: v1
