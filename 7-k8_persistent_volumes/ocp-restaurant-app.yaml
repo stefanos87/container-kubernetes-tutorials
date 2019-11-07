@@ -52,7 +52,7 @@ spec:
             name: restaurant-configmap
         - name:  upload-vol
           persistentVolumeClaim:
-            name: upload-dir-pvc
+            claimName: upload-dir-pvc
 ---
 kind: Service
 apiVersion: v1
