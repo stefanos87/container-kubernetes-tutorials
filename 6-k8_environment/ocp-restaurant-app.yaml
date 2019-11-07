@@ -2,6 +2,7 @@ kind: Deployment
 apiVersion: apps/v1
 metadata:
   name: restaurant-config
+  namespace: default
 spec:
   replicas: 1
   selector:
@@ -47,6 +48,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: restaurant-config-service
+  namespace: default
 spec:
   selector:
     app: restaurant
@@ -58,3 +60,19 @@ spec:
     port: 9991
     targetPort: 8082
     nodePort: 31115
+---
+kind: Ingress
+apiVersion: extensions/v1beta1
+metadata:
+  name: restaurant-config-ingress
+  namespace: default
+  annotations:
+    ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /restaurant
+        backend:
+          serviceName: restaurant-config-service
+          servicePort: 9991
