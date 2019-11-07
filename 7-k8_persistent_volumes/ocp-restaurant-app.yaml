@@ -40,8 +40,8 @@ spec:
         volumeMounts:
           - name:  config-vol
             mountPath:  /config
-          - name:  upload-vol
-            mountPath:  /tmp/upload
+          #- name:  upload-vol
+          #  mountPath:  /tmp/upload
         resources: 
           limits: 
             memory: "500Mi"
