@@ -31,9 +31,16 @@ spec:
             configMapKeyRef: 
               name: restaurant-configmap
               key: configuration_directory
+        - name: KEYSTORE_PASSWORD 
+          valueFrom:  
+            secretKeyRef: 
+              name: restaurant-secret
+              key: keystore.password
         volumeMounts:
           - name:  config-vol
             mountPath:  /config
+          #- name:  upload-vol
+          #  mountPath:  /tmp/upload
         resources: 
           limits: 
             memory: "500Mi"
@@ -42,6 +49,9 @@ spec:
         - name:  config-vol
           configMap:
             name: restaurant-configmap
+        - name:  upload-vol
+          persistentVolumeClaim:
+            claimName: upload-dir-pvc
 ---
 kind: Service
 apiVersion: v1

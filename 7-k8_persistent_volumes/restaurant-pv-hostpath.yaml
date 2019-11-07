@@ -1,0 +1,13 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: restaurant-pv
+  namespace: default
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 10Mi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/data/upload"
