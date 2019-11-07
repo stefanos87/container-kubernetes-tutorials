@@ -1,0 +1,20 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: restaurant-pv-route
+  namespace: default
+spec:
+  host: >-
+    restaurant-pv-route-default.rpozzi-ocp-3c76f4d12b7fe02f9cab56e64bec3e29-0001.eu-de.containers.appdomain.cloud
+  to:
+    kind: Service
+    name: restaurant-pv-service
+    weight: 100
+  wildcardPolicy: None
+status:
+  ingress:
+    - conditions:
+      host: >-
+        restaurant-pv-route-default.rpozzi-ocp-3c76f4d12b7fe02f9cab56e64bec3e29-0001.eu-de.containers.appdomain.cloud
+      routerName: router
+      wildcardPolicy: None

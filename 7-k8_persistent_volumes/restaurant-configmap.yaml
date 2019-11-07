@@ -11,3 +11,4 @@ data:
     db.type=mysql
     db.url=mysql.test.com
     db.username=robipozzi
+    db.password=passw0rd

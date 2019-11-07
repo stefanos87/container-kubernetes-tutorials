@@ -2,6 +2,7 @@ kind: Deployment
 apiVersion: apps/v1
 metadata:
   name: restaurant-pv
+  namespace: default
 spec:
   replicas: 1
   selector:
@@ -31,6 +32,11 @@ spec:
             configMapKeyRef: 
               name: restaurant-configmap
               key: configuration_directory
+        - name: KEYSTORE_PASSWORD 
+          valueFrom:  
+            secretKeyRef: 
+              name: restaurant-secret
+              key: keystore.password
         volumeMounts:
           - name:  config-vol
             mountPath:  /config
@@ -47,6 +53,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: restaurant-pv-service
+  namespace: default
 spec:
   selector:
     app: restaurant
@@ -63,6 +70,7 @@ kind: Ingress
 apiVersion: extensions/v1beta1
 metadata:
   name: restaurant-pv-ingress
+  namespace: default
   annotations:
     ingress.kubernetes.io/rewrite-target: /
 spec:
